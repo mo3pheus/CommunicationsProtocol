@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "RoverStatus.proto";
+
+package space.exploration.communications.protocol.propulsion;
+
+message TelemetryData {
+    space.exploration.communications.protocol.communication.RoverStatus.Location location = 1;
+    double velocity = 2;
+    double heading = 3;
+    double distanceTraveled = 4;
+    int64 SCET = 5;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package space.exploration.communications.protocol.service;
+
+message CamPayload {
+    map<string, bytes> imageData = 1;
+}
