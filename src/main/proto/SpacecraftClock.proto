@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package space.exploration.mars.rover.kernel;
 
-message SCLK {
+message SclkPacket {
     string utcTime = 1;
     string sclkValue = 2;
     int32 missionDuration = 3;

@@ -14,8 +14,8 @@ public final class SpacecraftClock {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface SCLKOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:space.exploration.mars.rover.kernel.SCLK)
+  public interface SclkPacketOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:space.exploration.mars.rover.kernel.SclkPacket)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -64,17 +64,17 @@ public final class SpacecraftClock {
     long getTimeElapsedMs();
   }
   /**
-   * Protobuf type {@code space.exploration.mars.rover.kernel.SCLK}
+   * Protobuf type {@code space.exploration.mars.rover.kernel.SclkPacket}
    */
-  public  static final class SCLK extends
+  public  static final class SclkPacket extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:space.exploration.mars.rover.kernel.SCLK)
-      SCLKOrBuilder {
-    // Use SCLK.newBuilder() to construct.
-    private SCLK(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:space.exploration.mars.rover.kernel.SclkPacket)
+      SclkPacketOrBuilder {
+    // Use SclkPacket.newBuilder() to construct.
+    private SclkPacket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SCLK() {
+    private SclkPacket() {
       utcTime_ = "";
       sclkValue_ = "";
       missionDuration_ = 0;
@@ -88,7 +88,7 @@ public final class SpacecraftClock {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private SCLK(
+    private SclkPacket(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -154,14 +154,14 @@ public final class SpacecraftClock {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SCLK_descriptor;
+      return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SclkPacket_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SCLK_fieldAccessorTable
+      return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SclkPacket_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              space.exploration.mars.rover.kernel.SpacecraftClock.SCLK.class, space.exploration.mars.rover.kernel.SpacecraftClock.SCLK.Builder.class);
+              space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket.class, space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket.Builder.class);
     }
 
     public static final int UTCTIME_FIELD_NUMBER = 1;
@@ -361,10 +361,10 @@ public final class SpacecraftClock {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof space.exploration.mars.rover.kernel.SpacecraftClock.SCLK)) {
+      if (!(obj instanceof space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket)) {
         return super.equals(obj);
       }
-      space.exploration.mars.rover.kernel.SpacecraftClock.SCLK other = (space.exploration.mars.rover.kernel.SpacecraftClock.SCLK) obj;
+      space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket other = (space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket) obj;
 
       boolean result = true;
       result = result && getUtcTime()
@@ -407,58 +407,58 @@ public final class SpacecraftClock {
       return hash;
     }
 
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseFrom(
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseFrom(
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseFrom(byte[] data)
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseFrom(
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseFrom(java.io.InputStream input)
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseFrom(
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseDelimitedFrom(java.io.InputStream input)
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseDelimitedFrom(
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseFrom(
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parseFrom(
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -470,7 +470,7 @@ public final class SpacecraftClock {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(space.exploration.mars.rover.kernel.SpacecraftClock.SCLK prototype) {
+    public static Builder newBuilder(space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -485,25 +485,25 @@ public final class SpacecraftClock {
       return builder;
     }
     /**
-     * Protobuf type {@code space.exploration.mars.rover.kernel.SCLK}
+     * Protobuf type {@code space.exploration.mars.rover.kernel.SclkPacket}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:space.exploration.mars.rover.kernel.SCLK)
-        space.exploration.mars.rover.kernel.SpacecraftClock.SCLKOrBuilder {
+        // @@protoc_insertion_point(builder_implements:space.exploration.mars.rover.kernel.SclkPacket)
+        space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacketOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SCLK_descriptor;
+        return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SclkPacket_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SCLK_fieldAccessorTable
+        return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SclkPacket_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                space.exploration.mars.rover.kernel.SpacecraftClock.SCLK.class, space.exploration.mars.rover.kernel.SpacecraftClock.SCLK.Builder.class);
+                space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket.class, space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket.Builder.class);
       }
 
-      // Construct using space.exploration.mars.rover.kernel.SpacecraftClock.SCLK.newBuilder()
+      // Construct using space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -537,23 +537,23 @@ public final class SpacecraftClock {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SCLK_descriptor;
+        return space.exploration.mars.rover.kernel.SpacecraftClock.internal_static_space_exploration_mars_rover_kernel_SclkPacket_descriptor;
       }
 
-      public space.exploration.mars.rover.kernel.SpacecraftClock.SCLK getDefaultInstanceForType() {
-        return space.exploration.mars.rover.kernel.SpacecraftClock.SCLK.getDefaultInstance();
+      public space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket getDefaultInstanceForType() {
+        return space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket.getDefaultInstance();
       }
 
-      public space.exploration.mars.rover.kernel.SpacecraftClock.SCLK build() {
-        space.exploration.mars.rover.kernel.SpacecraftClock.SCLK result = buildPartial();
+      public space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket build() {
+        space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public space.exploration.mars.rover.kernel.SpacecraftClock.SCLK buildPartial() {
-        space.exploration.mars.rover.kernel.SpacecraftClock.SCLK result = new space.exploration.mars.rover.kernel.SpacecraftClock.SCLK(this);
+      public space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket buildPartial() {
+        space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket result = new space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket(this);
         result.utcTime_ = utcTime_;
         result.sclkValue_ = sclkValue_;
         result.missionDuration_ = missionDuration_;
@@ -591,16 +591,16 @@ public final class SpacecraftClock {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof space.exploration.mars.rover.kernel.SpacecraftClock.SCLK) {
-          return mergeFrom((space.exploration.mars.rover.kernel.SpacecraftClock.SCLK)other);
+        if (other instanceof space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket) {
+          return mergeFrom((space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(space.exploration.mars.rover.kernel.SpacecraftClock.SCLK other) {
-        if (other == space.exploration.mars.rover.kernel.SpacecraftClock.SCLK.getDefaultInstance()) return this;
+      public Builder mergeFrom(space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket other) {
+        if (other == space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket.getDefaultInstance()) return this;
         if (!other.getUtcTime().isEmpty()) {
           utcTime_ = other.utcTime_;
           onChanged();
@@ -634,11 +634,11 @@ public final class SpacecraftClock {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        space.exploration.mars.rover.kernel.SpacecraftClock.SCLK parsedMessage = null;
+        space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (space.exploration.mars.rover.kernel.SpacecraftClock.SCLK) e.getUnfinishedMessage();
+          parsedMessage = (space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -943,49 +943,49 @@ public final class SpacecraftClock {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:space.exploration.mars.rover.kernel.SCLK)
+      // @@protoc_insertion_point(builder_scope:space.exploration.mars.rover.kernel.SclkPacket)
     }
 
-    // @@protoc_insertion_point(class_scope:space.exploration.mars.rover.kernel.SCLK)
-    private static final space.exploration.mars.rover.kernel.SpacecraftClock.SCLK DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:space.exploration.mars.rover.kernel.SclkPacket)
+    private static final space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new space.exploration.mars.rover.kernel.SpacecraftClock.SCLK();
+      DEFAULT_INSTANCE = new space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket();
     }
 
-    public static space.exploration.mars.rover.kernel.SpacecraftClock.SCLK getDefaultInstance() {
+    public static space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SCLK>
-        PARSER = new com.google.protobuf.AbstractParser<SCLK>() {
-      public SCLK parsePartialFrom(
+    private static final com.google.protobuf.Parser<SclkPacket>
+        PARSER = new com.google.protobuf.AbstractParser<SclkPacket>() {
+      public SclkPacket parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SCLK(input, extensionRegistry);
+          return new SclkPacket(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SCLK> parser() {
+    public static com.google.protobuf.Parser<SclkPacket> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SCLK> getParserForType() {
+    public com.google.protobuf.Parser<SclkPacket> getParserForType() {
       return PARSER;
     }
 
-    public space.exploration.mars.rover.kernel.SpacecraftClock.SCLK getDefaultInstanceForType() {
+    public space.exploration.mars.rover.kernel.SpacecraftClock.SclkPacket getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_space_exploration_mars_rover_kernel_SCLK_descriptor;
+    internal_static_space_exploration_mars_rover_kernel_SclkPacket_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_space_exploration_mars_rover_kernel_SCLK_fieldAccessorTable;
+      internal_static_space_exploration_mars_rover_kernel_SclkPacket_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -996,11 +996,11 @@ public final class SpacecraftClock {
   static {
     java.lang.String[] descriptorData = {
       "\n\025SpacecraftClock.proto\022#space.explorati" +
-      "on.mars.rover.kernel\"\206\001\n\004SCLK\022\017\n\007utcTime" +
-      "\030\001 \001(\t\022\021\n\tsclkValue\030\002 \001(\t\022\027\n\017missionDura" +
-      "tion\030\003 \001(\005\022\027\n\017timeScaleFactor\030\004 \001(\005\022\021\n\ts" +
-      "tartTime\030\005 \001(\t\022\025\n\rtimeElapsedMs\030\006 \001(\003b\006p" +
-      "roto3"
+      "on.mars.rover.kernel\"\214\001\n\nSclkPacket\022\017\n\007u" +
+      "tcTime\030\001 \001(\t\022\021\n\tsclkValue\030\002 \001(\t\022\027\n\017missi" +
+      "onDuration\030\003 \001(\005\022\027\n\017timeScaleFactor\030\004 \001(" +
+      "\005\022\021\n\tstartTime\030\005 \001(\t\022\025\n\rtimeElapsedMs\030\006 " +
+      "\001(\003b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1014,11 +1014,11 @@ public final class SpacecraftClock {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_space_exploration_mars_rover_kernel_SCLK_descriptor =
+    internal_static_space_exploration_mars_rover_kernel_SclkPacket_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_space_exploration_mars_rover_kernel_SCLK_fieldAccessorTable = new
+    internal_static_space_exploration_mars_rover_kernel_SclkPacket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_space_exploration_mars_rover_kernel_SCLK_descriptor,
+        internal_static_space_exploration_mars_rover_kernel_SclkPacket_descriptor,
         new java.lang.String[] { "UtcTime", "SclkValue", "MissionDuration", "TimeScaleFactor", "StartTime", "TimeElapsedMs", });
   }
 
