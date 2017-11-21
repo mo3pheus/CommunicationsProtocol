@@ -1,5 +1,4 @@
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/communication/MatrixCommunication.java
-/home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/mars/rover/kernel/SpacecraftClock.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/WeatherData.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/propulsion/TelemetryDataOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/communication/RoverPingOuterClass.java
@@ -13,5 +12,6 @@
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/WeatherQueryOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/propulsion/TelemetryPacketOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/robot/RobotPositionsOuterClass.java
+/home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/spacecraftClock/SpacecraftClock.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/CameraPayload.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/communication/RoverStatusOuterClass.java

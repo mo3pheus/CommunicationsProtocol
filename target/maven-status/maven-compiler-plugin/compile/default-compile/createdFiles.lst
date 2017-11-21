@@ -39,6 +39,7 @@ space/exploration/communications/protocol/service/WeatherQueryOuterClass$Weather
 space/exploration/communications/protocol/propulsion/TelemetryDataOuterClass$TelemetryDataOrBuilder.class
 space/exploration/communications/protocol/propulsion/TelemetryDataOuterClass$1.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$PointComp$Builder.class
+space/exploration/communications/protocol/spacecraftClock/SpacecraftClock.class
 space/exploration/communications/protocol/radar/PolarCoord.class
 space/exploration/communications/protocol/service/CameraPayload$CamPayloadOrBuilder.class
 space/exploration/communications/protocol/service/SeasonalWeather$SeasonalWeatherPayload.class
@@ -47,14 +48,12 @@ space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClas
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayloadOrBuilder.class
 space/exploration/communications/protocol/service/SeasonalWeather$SeasonalWeatherPayloadOrBuilder.class
 space/exploration/communications/protocol/service/CameraPayload$CamPayload$1.class
-space/exploration/mars/rover/kernel/SpacecraftClock.class
 space/exploration/communications/protocol/service/WeatherQueryOuterClass$WeatherQuery$Builder.class
 space/exploration/communications/protocol/service/WeatherData$WeatherPayload$1.class
 space/exploration/communications/protocol/radar/RadarContactListOuterClass.class
 space/exploration/communications/protocol/radar/RadarContactListOuterClass$RadarContactList$1.class
 space/exploration/communications/protocol/radar/PolarCoord$PolarPoint$1.class
 space/exploration/communications/protocol/propulsion/TelemetryDataOuterClass$TelemetryData.class
-space/exploration/mars/rover/kernel/SpacecraftClock$SclkPacket$1.class
 space/exploration/communications/protocol/communication/RoverStatusOuterClass.class
 space/exploration/communications/protocol/communication/RoverPingOuterClass$RoverPing.class
 space/exploration/communications/protocol/propulsion/TelemetryPacketOuterClass$TelemetryPacket$1.class
@@ -62,9 +61,9 @@ space/exploration/communications/protocol/propulsion/TelemetryDataOuterClass$Tel
 space/exploration/communications/protocol/communication/RoverStatusOuterClass$RoverStatusOrBuilder.class
 space/exploration/communications/protocol/service/CameraPayload$CamPayload.class
 space/exploration/communications/protocol/communication/RoverStatusOuterClass$RoverStatus$1.class
+space/exploration/communications/protocol/spacecraftClock/SpacecraftClock$SclkPacket$Builder.class
 space/exploration/communications/protocol/service/SeasonalWeather$1.class
 space/exploration/communications/protocol/propulsion/TelemetryPacketOuterClass$TelemetryPacket.class
-space/exploration/mars/rover/kernel/SpacecraftClock$SclkPacket$Builder.class
 space/exploration/communications/protocol/service/WeatherData$WeatherPayload$Builder.class
 space/exploration/communications/protocol/service/SeasonalWeather$SeasonalWeatherPayload$Builder.class
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayload$TargetPackage.class
@@ -74,6 +73,7 @@ space/exploration/communications/protocol/radar/RadarContactListOuterClass$Radar
 space/exploration/communications/protocol/communication/RoverPingOuterClass$RoverPing$1.class
 space/exploration/communications/protocol/propulsion/TelemetryPacketOuterClass$TelemetryPacket$Builder.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$Composition.class
+space/exploration/communications/protocol/spacecraftClock/SpacecraftClock$1.class
 space/exploration/communications/protocol/robot/RobotPositionsOuterClass$RobotPositions$PointOrBuilder.class
 space/exploration/communications/protocol/robot/RobotPositionsOuterClass.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$Composition$1.class
@@ -85,8 +85,7 @@ space/exploration/communications/protocol/service/WeatherData$WeatherPayloadOrBu
 space/exploration/communications/protocol/robot/RobotPositionsOuterClass$RobotPositions.class
 communications/protocol/ModuleDirectory$Module.class
 space/exploration/communications/protocol/communication/MatrixCommunication$MatrixCall.class
-space/exploration/mars/rover/kernel/SpacecraftClock$SclkPacketOrBuilder.class
-space/exploration/mars/rover/kernel/SpacecraftClock$1.class
+space/exploration/communications/protocol/spacecraftClock/SpacecraftClock$SclkPacket.class
 space/exploration/communications/protocol/radar/RadarContactListOuterClass$RadarContactList.class
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayload$TargetPackage$Builder.class
 space/exploration/communications/protocol/radar/PolarCoord$PolarPoint.class
@@ -105,11 +104,13 @@ space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClas
 space/exploration/communications/protocol/diagnostics/HeartBeatOuterClass$HeartBeatOrBuilder.class
 space/exploration/communications/protocol/communication/MatrixCommunication$1.class
 space/exploration/communications/protocol/communication/MatrixCommunication$MatrixCall$Builder.class
+space/exploration/communications/protocol/spacecraftClock/SpacecraftClock$SclkPacketOrBuilder.class
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayload$1.class
 space/exploration/communications/protocol/service/SeasonalWeather.class
 space/exploration/communications/protocol/radar/PolarCoord$PolarPointOrBuilder.class
 space/exploration/communications/protocol/propulsion/TelemetryDataOuterClass.class
 space/exploration/communications/protocol/communication/RoverStatusOuterClass$RoverStatus$Location$1.class
+space/exploration/communications/protocol/spacecraftClock/SpacecraftClock$SclkPacket$1.class
 space/exploration/communications/protocol/radar/PolarCoord$1.class
 space/exploration/communications/protocol/communication/RoverPingOuterClass$1.class
 space/exploration/communications/protocol/communication/MatrixCommunication$MatrixCall$1.class
@@ -120,5 +121,4 @@ space/exploration/communications/protocol/service/SeasonalWeather$SeasonalWeathe
 space/exploration/communications/protocol/service/CameraPayload$CamPayload$ImageDataDefaultEntryHolder.class
 space/exploration/communications/protocol/radar/RadarContactListOuterClass$RadarContactList$Builder.class
 space/exploration/communications/protocol/communication/MatrixCommunication$MatrixCallOrBuilder.class
-space/exploration/mars/rover/kernel/SpacecraftClock$SclkPacket.class
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayload$TargetPackageOrBuilder.class

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package space.exploration.mars.rover.kernel;
+package space.exploration.communications.protocol.spacecraftClock;
 
 message SclkPacket {
     string utcTime = 1;
