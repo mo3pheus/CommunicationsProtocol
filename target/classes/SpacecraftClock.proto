@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package space.exploration.mars.rover.kernel;
+
+message SCLK {
+    string utcTime = 1;
+    string sclkValue = 2;
+    int32 missionDuration = 3;
+    int32 timeScaleFactor = 4;
+    string startTime = 5;
+    int64 timeElapsedMs = 6;
+}
+
