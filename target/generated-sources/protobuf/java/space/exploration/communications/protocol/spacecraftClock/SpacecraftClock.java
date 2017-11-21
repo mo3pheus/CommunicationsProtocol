@@ -39,9 +39,9 @@ public final class SpacecraftClock {
         getSclkValueBytes();
 
     /**
-     * <code>int32 missionDuration = 3;</code>
+     * <code>int64 missionDurationMS = 3;</code>
      */
-    int getMissionDuration();
+    long getMissionDurationMS();
 
     /**
      * <code>int32 timeScaleFactor = 4;</code>
@@ -77,7 +77,7 @@ public final class SpacecraftClock {
     private SclkPacket() {
       utcTime_ = "";
       sclkValue_ = "";
-      missionDuration_ = 0;
+      missionDurationMS_ = 0L;
       timeScaleFactor_ = 0;
       startTime_ = "";
       timeElapsedMs_ = 0L;
@@ -122,7 +122,7 @@ public final class SpacecraftClock {
             }
             case 24: {
 
-              missionDuration_ = input.readInt32();
+              missionDurationMS_ = input.readInt64();
               break;
             }
             case 32: {
@@ -232,13 +232,13 @@ public final class SpacecraftClock {
       }
     }
 
-    public static final int MISSIONDURATION_FIELD_NUMBER = 3;
-    private int missionDuration_;
+    public static final int MISSIONDURATIONMS_FIELD_NUMBER = 3;
+    private long missionDurationMS_;
     /**
-     * <code>int32 missionDuration = 3;</code>
+     * <code>int64 missionDurationMS = 3;</code>
      */
-    public int getMissionDuration() {
-      return missionDuration_;
+    public long getMissionDurationMS() {
+      return missionDurationMS_;
     }
 
     public static final int TIMESCALEFACTOR_FIELD_NUMBER = 4;
@@ -311,8 +311,8 @@ public final class SpacecraftClock {
       if (!getSclkValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sclkValue_);
       }
-      if (missionDuration_ != 0) {
-        output.writeInt32(3, missionDuration_);
+      if (missionDurationMS_ != 0L) {
+        output.writeInt64(3, missionDurationMS_);
       }
       if (timeScaleFactor_ != 0) {
         output.writeInt32(4, timeScaleFactor_);
@@ -336,9 +336,9 @@ public final class SpacecraftClock {
       if (!getSclkValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sclkValue_);
       }
-      if (missionDuration_ != 0) {
+      if (missionDurationMS_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, missionDuration_);
+          .computeInt64Size(3, missionDurationMS_);
       }
       if (timeScaleFactor_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -371,8 +371,8 @@ public final class SpacecraftClock {
           .equals(other.getUtcTime());
       result = result && getSclkValue()
           .equals(other.getSclkValue());
-      result = result && (getMissionDuration()
-          == other.getMissionDuration());
+      result = result && (getMissionDurationMS()
+          == other.getMissionDurationMS());
       result = result && (getTimeScaleFactor()
           == other.getTimeScaleFactor());
       result = result && getStartTime()
@@ -393,8 +393,9 @@ public final class SpacecraftClock {
       hash = (53 * hash) + getUtcTime().hashCode();
       hash = (37 * hash) + SCLKVALUE_FIELD_NUMBER;
       hash = (53 * hash) + getSclkValue().hashCode();
-      hash = (37 * hash) + MISSIONDURATION_FIELD_NUMBER;
-      hash = (53 * hash) + getMissionDuration();
+      hash = (37 * hash) + MISSIONDURATIONMS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMissionDurationMS());
       hash = (37 * hash) + TIMESCALEFACTOR_FIELD_NUMBER;
       hash = (53 * hash) + getTimeScaleFactor();
       hash = (37 * hash) + STARTTIME_FIELD_NUMBER;
@@ -524,7 +525,7 @@ public final class SpacecraftClock {
 
         sclkValue_ = "";
 
-        missionDuration_ = 0;
+        missionDurationMS_ = 0L;
 
         timeScaleFactor_ = 0;
 
@@ -556,7 +557,7 @@ public final class SpacecraftClock {
         space.exploration.communications.protocol.spacecraftClock.SpacecraftClock.SclkPacket result = new space.exploration.communications.protocol.spacecraftClock.SpacecraftClock.SclkPacket(this);
         result.utcTime_ = utcTime_;
         result.sclkValue_ = sclkValue_;
-        result.missionDuration_ = missionDuration_;
+        result.missionDurationMS_ = missionDurationMS_;
         result.timeScaleFactor_ = timeScaleFactor_;
         result.startTime_ = startTime_;
         result.timeElapsedMs_ = timeElapsedMs_;
@@ -609,8 +610,8 @@ public final class SpacecraftClock {
           sclkValue_ = other.sclkValue_;
           onChanged();
         }
-        if (other.getMissionDuration() != 0) {
-          setMissionDuration(other.getMissionDuration());
+        if (other.getMissionDurationMS() != 0L) {
+          setMissionDurationMS(other.getMissionDurationMS());
         }
         if (other.getTimeScaleFactor() != 0) {
           setTimeScaleFactor(other.getTimeScaleFactor());
@@ -786,28 +787,28 @@ public final class SpacecraftClock {
         return this;
       }
 
-      private int missionDuration_ ;
+      private long missionDurationMS_ ;
       /**
-       * <code>int32 missionDuration = 3;</code>
+       * <code>int64 missionDurationMS = 3;</code>
        */
-      public int getMissionDuration() {
-        return missionDuration_;
+      public long getMissionDurationMS() {
+        return missionDurationMS_;
       }
       /**
-       * <code>int32 missionDuration = 3;</code>
+       * <code>int64 missionDurationMS = 3;</code>
        */
-      public Builder setMissionDuration(int value) {
+      public Builder setMissionDurationMS(long value) {
         
-        missionDuration_ = value;
+        missionDurationMS_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 missionDuration = 3;</code>
+       * <code>int64 missionDurationMS = 3;</code>
        */
-      public Builder clearMissionDuration() {
+      public Builder clearMissionDurationMS() {
         
-        missionDuration_ = 0;
+        missionDurationMS_ = 0L;
         onChanged();
         return this;
       }
@@ -997,10 +998,10 @@ public final class SpacecraftClock {
     java.lang.String[] descriptorData = {
       "\n\025SpacecraftClock.proto\0229space.explorati" +
       "on.communications.protocol.spacecraftClo" +
-      "ck\"\214\001\n\nSclkPacket\022\017\n\007utcTime\030\001 \001(\t\022\021\n\tsc" +
-      "lkValue\030\002 \001(\t\022\027\n\017missionDuration\030\003 \001(\005\022\027" +
-      "\n\017timeScaleFactor\030\004 \001(\005\022\021\n\tstartTime\030\005 \001" +
-      "(\t\022\025\n\rtimeElapsedMs\030\006 \001(\003b\006proto3"
+      "ck\"\216\001\n\nSclkPacket\022\017\n\007utcTime\030\001 \001(\t\022\021\n\tsc" +
+      "lkValue\030\002 \001(\t\022\031\n\021missionDurationMS\030\003 \001(\003" +
+      "\022\027\n\017timeScaleFactor\030\004 \001(\005\022\021\n\tstartTime\030\005" +
+      " \001(\t\022\025\n\rtimeElapsedMs\030\006 \001(\003b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1019,7 +1020,7 @@ public final class SpacecraftClock {
     internal_static_space_exploration_communications_protocol_spacecraftClock_SclkPacket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_spacecraftClock_SclkPacket_descriptor,
-        new java.lang.String[] { "UtcTime", "SclkValue", "MissionDuration", "TimeScaleFactor", "StartTime", "TimeElapsedMs", });
+        new java.lang.String[] { "UtcTime", "SclkValue", "MissionDurationMS", "TimeScaleFactor", "StartTime", "TimeElapsedMs", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
