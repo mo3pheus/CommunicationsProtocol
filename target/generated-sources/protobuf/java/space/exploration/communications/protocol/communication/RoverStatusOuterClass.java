@@ -70,6 +70,16 @@ public final class RoverStatusOuterClass {
      * <code>bytes moduleMessage = 8;</code>
      */
     com.google.protobuf.ByteString getModuleMessage();
+
+    /**
+     * <code>string moduleName = 9;</code>
+     */
+    java.lang.String getModuleName();
+    /**
+     * <code>string moduleName = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getModuleNameBytes();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.communication.RoverStatus}
@@ -90,6 +100,7 @@ public final class RoverStatusOuterClass {
       moduleReporting_ = 0;
       notes_ = "";
       moduleMessage_ = com.google.protobuf.ByteString.EMPTY;
+      moduleName_ = "";
     }
 
     @java.lang.Override
@@ -164,6 +175,12 @@ public final class RoverStatusOuterClass {
             case 66: {
 
               moduleMessage_ = input.readBytes();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              moduleName_ = s;
               break;
             }
           }
@@ -790,6 +807,40 @@ public final class RoverStatusOuterClass {
       return moduleMessage_;
     }
 
+    public static final int MODULENAME_FIELD_NUMBER = 9;
+    private volatile java.lang.Object moduleName_;
+    /**
+     * <code>string moduleName = 9;</code>
+     */
+    public java.lang.String getModuleName() {
+      java.lang.Object ref = moduleName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        moduleName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string moduleName = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getModuleNameBytes() {
+      java.lang.Object ref = moduleName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        moduleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -825,6 +876,9 @@ public final class RoverStatusOuterClass {
       }
       if (!moduleMessage_.isEmpty()) {
         output.writeBytes(8, moduleMessage_);
+      }
+      if (!getModuleNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, moduleName_);
       }
     }
 
@@ -864,6 +918,9 @@ public final class RoverStatusOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(8, moduleMessage_);
       }
+      if (!getModuleNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, moduleName_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -899,6 +956,8 @@ public final class RoverStatusOuterClass {
           .equals(other.getNotes());
       result = result && getModuleMessage()
           .equals(other.getModuleMessage());
+      result = result && getModuleName()
+          .equals(other.getModuleName());
       return result;
     }
 
@@ -929,6 +988,8 @@ public final class RoverStatusOuterClass {
       hash = (53 * hash) + getNotes().hashCode();
       hash = (37 * hash) + MODULEMESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getModuleMessage().hashCode();
+      hash = (37 * hash) + MODULENAME_FIELD_NUMBER;
+      hash = (53 * hash) + getModuleName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1067,6 +1128,8 @@ public final class RoverStatusOuterClass {
 
         moduleMessage_ = com.google.protobuf.ByteString.EMPTY;
 
+        moduleName_ = "";
+
         return this;
       }
 
@@ -1101,6 +1164,7 @@ public final class RoverStatusOuterClass {
         result.moduleReporting_ = moduleReporting_;
         result.notes_ = notes_;
         result.moduleMessage_ = moduleMessage_;
+        result.moduleName_ = moduleName_;
         onBuilt();
         return result;
       }
@@ -1166,6 +1230,10 @@ public final class RoverStatusOuterClass {
         }
         if (other.getModuleMessage() != com.google.protobuf.ByteString.EMPTY) {
           setModuleMessage(other.getModuleMessage());
+        }
+        if (!other.getModuleName().isEmpty()) {
+          moduleName_ = other.moduleName_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1537,6 +1605,75 @@ public final class RoverStatusOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object moduleName_ = "";
+      /**
+       * <code>string moduleName = 9;</code>
+       */
+      public java.lang.String getModuleName() {
+        java.lang.Object ref = moduleName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          moduleName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string moduleName = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getModuleNameBytes() {
+        java.lang.Object ref = moduleName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          moduleName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string moduleName = 9;</code>
+       */
+      public Builder setModuleName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        moduleName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string moduleName = 9;</code>
+       */
+      public Builder clearModuleName() {
+        
+        moduleName_ = getDefaultInstance().getModuleName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string moduleName = 9;</code>
+       */
+      public Builder setModuleNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        moduleName_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1606,15 +1743,15 @@ public final class RoverStatusOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021RoverStatus.proto\0227space.exploration.c" +
-      "ommunications.protocol.communication\"\223\002\n" +
+      "ommunications.protocol.communication\"\247\002\n" +
       "\013RoverStatus\022\014\n\004SCET\030\001 \001(\003\022\013\n\003ert\030\002 \001(\003\022" +
       "\021\n\tsolNumber\030\003 \001(\005\022_\n\010location\030\004 \001(\0132M.s" +
       "pace.exploration.communications.protocol" +
       ".communication.RoverStatus.Location\022\024\n\014b" +
       "atteryLevel\030\005 \001(\005\022\027\n\017moduleReporting\030\006 \001" +
       "(\005\022\r\n\005notes\030\007 \001(\t\022\025\n\rmoduleMessage\030\010 \001(\014" +
-      "\032 \n\010Location\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005b\006prot" +
-      "o3"
+      "\022\022\n\nmoduleName\030\t \001(\t\032 \n\010Location\022\t\n\001x\030\001 " +
+      "\001(\005\022\t\n\001y\030\002 \001(\005b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1633,7 +1770,7 @@ public final class RoverStatusOuterClass {
     internal_static_space_exploration_communications_protocol_communication_RoverStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_communication_RoverStatus_descriptor,
-        new java.lang.String[] { "SCET", "Ert", "SolNumber", "Location", "BatteryLevel", "ModuleReporting", "Notes", "ModuleMessage", });
+        new java.lang.String[] { "SCET", "Ert", "SolNumber", "Location", "BatteryLevel", "ModuleReporting", "Notes", "ModuleMessage", "ModuleName", });
     internal_static_space_exploration_communications_protocol_communication_RoverStatus_Location_descriptor =
       internal_static_space_exploration_communications_protocol_communication_RoverStatus_descriptor.getNestedTypes().get(0);
     internal_static_space_exploration_communications_protocol_communication_RoverStatus_Location_fieldAccessorTable = new
