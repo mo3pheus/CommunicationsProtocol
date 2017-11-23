@@ -62,6 +62,41 @@ public final class SpacecraftClock {
      * <code>int64 timeElapsedMs = 6;</code>
      */
     long getTimeElapsedMs();
+
+    /**
+     * <code>string calendarTime = 7;</code>
+     */
+    java.lang.String getCalendarTime();
+    /**
+     * <code>string calendarTime = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getCalendarTimeBytes();
+
+    /**
+     * <code>double ephemerisTime = 8;</code>
+     */
+    double getEphemerisTime();
+
+    /**
+     * <code>string clockFile = 9;</code>
+     */
+    java.lang.String getClockFile();
+    /**
+     * <code>string clockFile = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getClockFileBytes();
+
+    /**
+     * <code>string applicableTimeFrame = 10;</code>
+     */
+    java.lang.String getApplicableTimeFrame();
+    /**
+     * <code>string applicableTimeFrame = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getApplicableTimeFrameBytes();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.spacecraftClock.SclkPacket}
@@ -81,6 +116,10 @@ public final class SpacecraftClock {
       timeScaleFactor_ = 0;
       startTime_ = "";
       timeElapsedMs_ = 0L;
+      calendarTime_ = "";
+      ephemerisTime_ = 0D;
+      clockFile_ = "";
+      applicableTimeFrame_ = "";
     }
 
     @java.lang.Override
@@ -139,6 +178,29 @@ public final class SpacecraftClock {
             case 48: {
 
               timeElapsedMs_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              calendarTime_ = s;
+              break;
+            }
+            case 65: {
+
+              ephemerisTime_ = input.readDouble();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clockFile_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              applicableTimeFrame_ = s;
               break;
             }
           }
@@ -293,6 +355,117 @@ public final class SpacecraftClock {
       return timeElapsedMs_;
     }
 
+    public static final int CALENDARTIME_FIELD_NUMBER = 7;
+    private volatile java.lang.Object calendarTime_;
+    /**
+     * <code>string calendarTime = 7;</code>
+     */
+    public java.lang.String getCalendarTime() {
+      java.lang.Object ref = calendarTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        calendarTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string calendarTime = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCalendarTimeBytes() {
+      java.lang.Object ref = calendarTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        calendarTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EPHEMERISTIME_FIELD_NUMBER = 8;
+    private double ephemerisTime_;
+    /**
+     * <code>double ephemerisTime = 8;</code>
+     */
+    public double getEphemerisTime() {
+      return ephemerisTime_;
+    }
+
+    public static final int CLOCKFILE_FIELD_NUMBER = 9;
+    private volatile java.lang.Object clockFile_;
+    /**
+     * <code>string clockFile = 9;</code>
+     */
+    public java.lang.String getClockFile() {
+      java.lang.Object ref = clockFile_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clockFile_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string clockFile = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClockFileBytes() {
+      java.lang.Object ref = clockFile_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clockFile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int APPLICABLETIMEFRAME_FIELD_NUMBER = 10;
+    private volatile java.lang.Object applicableTimeFrame_;
+    /**
+     * <code>string applicableTimeFrame = 10;</code>
+     */
+    public java.lang.String getApplicableTimeFrame() {
+      java.lang.Object ref = applicableTimeFrame_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applicableTimeFrame_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string applicableTimeFrame = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getApplicableTimeFrameBytes() {
+      java.lang.Object ref = applicableTimeFrame_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        applicableTimeFrame_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -323,6 +496,18 @@ public final class SpacecraftClock {
       if (timeElapsedMs_ != 0L) {
         output.writeInt64(6, timeElapsedMs_);
       }
+      if (!getCalendarTimeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, calendarTime_);
+      }
+      if (ephemerisTime_ != 0D) {
+        output.writeDouble(8, ephemerisTime_);
+      }
+      if (!getClockFileBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, clockFile_);
+      }
+      if (!getApplicableTimeFrameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, applicableTimeFrame_);
+      }
     }
 
     public int getSerializedSize() {
@@ -350,6 +535,19 @@ public final class SpacecraftClock {
       if (timeElapsedMs_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, timeElapsedMs_);
+      }
+      if (!getCalendarTimeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, calendarTime_);
+      }
+      if (ephemerisTime_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(8, ephemerisTime_);
+      }
+      if (!getClockFileBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clockFile_);
+      }
+      if (!getApplicableTimeFrameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, applicableTimeFrame_);
       }
       memoizedSize = size;
       return size;
@@ -379,6 +577,16 @@ public final class SpacecraftClock {
           .equals(other.getStartTime());
       result = result && (getTimeElapsedMs()
           == other.getTimeElapsedMs());
+      result = result && getCalendarTime()
+          .equals(other.getCalendarTime());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getEphemerisTime())
+          == java.lang.Double.doubleToLongBits(
+              other.getEphemerisTime()));
+      result = result && getClockFile()
+          .equals(other.getClockFile());
+      result = result && getApplicableTimeFrame()
+          .equals(other.getApplicableTimeFrame());
       return result;
     }
 
@@ -403,6 +611,15 @@ public final class SpacecraftClock {
       hash = (37 * hash) + TIMEELAPSEDMS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimeElapsedMs());
+      hash = (37 * hash) + CALENDARTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCalendarTime().hashCode();
+      hash = (37 * hash) + EPHEMERISTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getEphemerisTime()));
+      hash = (37 * hash) + CLOCKFILE_FIELD_NUMBER;
+      hash = (53 * hash) + getClockFile().hashCode();
+      hash = (37 * hash) + APPLICABLETIMEFRAME_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicableTimeFrame().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -533,6 +750,14 @@ public final class SpacecraftClock {
 
         timeElapsedMs_ = 0L;
 
+        calendarTime_ = "";
+
+        ephemerisTime_ = 0D;
+
+        clockFile_ = "";
+
+        applicableTimeFrame_ = "";
+
         return this;
       }
 
@@ -561,6 +786,10 @@ public final class SpacecraftClock {
         result.timeScaleFactor_ = timeScaleFactor_;
         result.startTime_ = startTime_;
         result.timeElapsedMs_ = timeElapsedMs_;
+        result.calendarTime_ = calendarTime_;
+        result.ephemerisTime_ = ephemerisTime_;
+        result.clockFile_ = clockFile_;
+        result.applicableTimeFrame_ = applicableTimeFrame_;
         onBuilt();
         return result;
       }
@@ -622,6 +851,21 @@ public final class SpacecraftClock {
         }
         if (other.getTimeElapsedMs() != 0L) {
           setTimeElapsedMs(other.getTimeElapsedMs());
+        }
+        if (!other.getCalendarTime().isEmpty()) {
+          calendarTime_ = other.calendarTime_;
+          onChanged();
+        }
+        if (other.getEphemerisTime() != 0D) {
+          setEphemerisTime(other.getEphemerisTime());
+        }
+        if (!other.getClockFile().isEmpty()) {
+          clockFile_ = other.clockFile_;
+          onChanged();
+        }
+        if (!other.getApplicableTimeFrame().isEmpty()) {
+          applicableTimeFrame_ = other.applicableTimeFrame_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -933,6 +1177,239 @@ public final class SpacecraftClock {
         onChanged();
         return this;
       }
+
+      private java.lang.Object calendarTime_ = "";
+      /**
+       * <code>string calendarTime = 7;</code>
+       */
+      public java.lang.String getCalendarTime() {
+        java.lang.Object ref = calendarTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          calendarTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string calendarTime = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCalendarTimeBytes() {
+        java.lang.Object ref = calendarTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          calendarTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string calendarTime = 7;</code>
+       */
+      public Builder setCalendarTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        calendarTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string calendarTime = 7;</code>
+       */
+      public Builder clearCalendarTime() {
+        
+        calendarTime_ = getDefaultInstance().getCalendarTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string calendarTime = 7;</code>
+       */
+      public Builder setCalendarTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        calendarTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double ephemerisTime_ ;
+      /**
+       * <code>double ephemerisTime = 8;</code>
+       */
+      public double getEphemerisTime() {
+        return ephemerisTime_;
+      }
+      /**
+       * <code>double ephemerisTime = 8;</code>
+       */
+      public Builder setEphemerisTime(double value) {
+        
+        ephemerisTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double ephemerisTime = 8;</code>
+       */
+      public Builder clearEphemerisTime() {
+        
+        ephemerisTime_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clockFile_ = "";
+      /**
+       * <code>string clockFile = 9;</code>
+       */
+      public java.lang.String getClockFile() {
+        java.lang.Object ref = clockFile_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clockFile_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string clockFile = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClockFileBytes() {
+        java.lang.Object ref = clockFile_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clockFile_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string clockFile = 9;</code>
+       */
+      public Builder setClockFile(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clockFile_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string clockFile = 9;</code>
+       */
+      public Builder clearClockFile() {
+        
+        clockFile_ = getDefaultInstance().getClockFile();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string clockFile = 9;</code>
+       */
+      public Builder setClockFileBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        clockFile_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object applicableTimeFrame_ = "";
+      /**
+       * <code>string applicableTimeFrame = 10;</code>
+       */
+      public java.lang.String getApplicableTimeFrame() {
+        java.lang.Object ref = applicableTimeFrame_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          applicableTimeFrame_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string applicableTimeFrame = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getApplicableTimeFrameBytes() {
+        java.lang.Object ref = applicableTimeFrame_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          applicableTimeFrame_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string applicableTimeFrame = 10;</code>
+       */
+      public Builder setApplicableTimeFrame(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        applicableTimeFrame_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string applicableTimeFrame = 10;</code>
+       */
+      public Builder clearApplicableTimeFrame() {
+        
+        applicableTimeFrame_ = getDefaultInstance().getApplicableTimeFrame();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string applicableTimeFrame = 10;</code>
+       */
+      public Builder setApplicableTimeFrameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        applicableTimeFrame_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -998,10 +1475,13 @@ public final class SpacecraftClock {
     java.lang.String[] descriptorData = {
       "\n\025SpacecraftClock.proto\0229space.explorati" +
       "on.communications.protocol.spacecraftClo" +
-      "ck\"\216\001\n\nSclkPacket\022\017\n\007utcTime\030\001 \001(\t\022\021\n\tsc" +
+      "ck\"\353\001\n\nSclkPacket\022\017\n\007utcTime\030\001 \001(\t\022\021\n\tsc" +
       "lkValue\030\002 \001(\t\022\031\n\021missionDurationMS\030\003 \001(\003" +
       "\022\027\n\017timeScaleFactor\030\004 \001(\005\022\021\n\tstartTime\030\005" +
-      " \001(\t\022\025\n\rtimeElapsedMs\030\006 \001(\003b\006proto3"
+      " \001(\t\022\025\n\rtimeElapsedMs\030\006 \001(\003\022\024\n\014calendarT" +
+      "ime\030\007 \001(\t\022\025\n\rephemerisTime\030\010 \001(\001\022\021\n\tcloc" +
+      "kFile\030\t \001(\t\022\033\n\023applicableTimeFrame\030\n \001(\t" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1020,7 +1500,7 @@ public final class SpacecraftClock {
     internal_static_space_exploration_communications_protocol_spacecraftClock_SclkPacket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_spacecraftClock_SclkPacket_descriptor,
-        new java.lang.String[] { "UtcTime", "SclkValue", "MissionDurationMS", "TimeScaleFactor", "StartTime", "TimeElapsedMs", });
+        new java.lang.String[] { "UtcTime", "SclkValue", "MissionDurationMS", "TimeScaleFactor", "StartTime", "TimeElapsedMs", "CalendarTime", "EphemerisTime", "ClockFile", "ApplicableTimeFrame", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -9,5 +9,9 @@ message SclkPacket {
     int32 timeScaleFactor = 4;
     string startTime = 5;
     int64 timeElapsedMs = 6;
+    string calendarTime = 7;
+    double ephemerisTime = 8;
+    string clockFile = 9;
+    string applicableTimeFrame = 10;
 }
 
