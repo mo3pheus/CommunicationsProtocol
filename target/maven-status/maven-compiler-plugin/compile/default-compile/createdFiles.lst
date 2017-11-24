@@ -74,6 +74,7 @@ space/exploration/communications/protocol/communication/RoverPingOuterClass$Rove
 space/exploration/communications/protocol/propulsion/TelemetryPacketOuterClass$TelemetryPacket$Builder.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$Composition.class
 space/exploration/communications/protocol/spacecraftClock/SpacecraftClock$1.class
+communications/protocol/KafkaConfig.class
 space/exploration/communications/protocol/robot/RobotPositionsOuterClass$RobotPositions$PointOrBuilder.class
 space/exploration/communications/protocol/robot/RobotPositionsOuterClass.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$Composition$1.class

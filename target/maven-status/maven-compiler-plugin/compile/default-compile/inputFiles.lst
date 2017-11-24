@@ -6,6 +6,7 @@
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/radar/RadarContactListOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/InstructionPayloadOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/radar/PolarCoord.java
+/home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/protocol/KafkaConfig.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/SeasonalWeather.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/diagnostics/HeartBeatOuterClass.java
