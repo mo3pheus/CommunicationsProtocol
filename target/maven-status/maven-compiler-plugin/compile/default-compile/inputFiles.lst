@@ -11,6 +11,7 @@
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/diagnostics/HeartBeatOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/WeatherQueryOuterClass.java
+/home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/spice/MSLRelativePositions.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/propulsion/TelemetryPacketOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/robot/RobotPositionsOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/spacecraftClock/SpacecraftClock.java

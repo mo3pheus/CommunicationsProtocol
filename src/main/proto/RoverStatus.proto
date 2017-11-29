@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "MSLRelativePositions.proto";
+
 package space.exploration.communications.protocol.communication;
 
 message RoverStatus {
@@ -12,6 +14,8 @@ message RoverStatus {
     string notes = 7;
     bytes moduleMessage = 8;
     string moduleName = 9;
+
+    space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;
 
     message Location {
         int32 x = 1;

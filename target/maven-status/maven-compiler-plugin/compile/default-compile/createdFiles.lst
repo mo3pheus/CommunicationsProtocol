@@ -1,5 +1,6 @@
 space/exploration/communications/protocol/communication/RoverPingOuterClass$RoverPingOrBuilder.class
 space/exploration/communications/protocol/propulsion/TelemetryPacketOuterClass$1.class
+space/exploration/communications/protocol/spice/MSLRelativePositions.class
 space/exploration/communications/protocol/diagnostics/HeartBeatOuterClass$HeartBeat$EquipmentHealthDefaultEntryHolder.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$PointComp.class
 space/exploration/communications/protocol/diagnostics/HeartBeatOuterClass$HeartBeat.class
@@ -25,6 +26,7 @@ space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClas
 space/exploration/communications/protocol/communication/RoverStatusOuterClass$RoverStatus$LocationOrBuilder.class
 space/exploration/communications/protocol/service/CameraPayload$CamPayload$Builder.class
 space/exploration/communications/protocol/service/CameraPayload.class
+space/exploration/communications/protocol/spice/MSLRelativePositions$MSLRelPositionsPacketOrBuilder.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$Composition$Builder.class
 space/exploration/communications/protocol/service/CameraPayload$1.class
 space/exploration/communications/protocol/communication/RoverPingOuterClass$RoverPing$Builder.class
@@ -33,6 +35,7 @@ space/exploration/communications/protocol/radar/RadarContactListOuterClass$1.cla
 space/exploration/communications/protocol/radar/PolarCoord$PolarPoint$Builder.class
 space/exploration/communications/protocol/service/WeatherData$WeatherPayload.class
 space/exploration/communications/protocol/robot/RobotPositionsOuterClass$RobotPositions$Point$1.class
+space/exploration/communications/protocol/spice/MSLRelativePositions$MSLRelPositionsPacket.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$Location.class
 space/exploration/communications/protocol/communication/RoverPingOuterClass.class
 space/exploration/communications/protocol/service/WeatherQueryOuterClass$WeatherQuery$1.class
@@ -48,6 +51,7 @@ space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClas
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayloadOrBuilder.class
 space/exploration/communications/protocol/service/SeasonalWeather$SeasonalWeatherPayloadOrBuilder.class
 space/exploration/communications/protocol/service/CameraPayload$CamPayload$1.class
+space/exploration/communications/protocol/spice/MSLRelativePositions$1.class
 space/exploration/communications/protocol/service/WeatherQueryOuterClass$WeatherQuery$Builder.class
 space/exploration/communications/protocol/service/WeatherData$WeatherPayload$1.class
 space/exploration/communications/protocol/radar/RadarContactListOuterClass.class
@@ -87,6 +91,7 @@ space/exploration/communications/protocol/robot/RobotPositionsOuterClass$RobotPo
 communications/protocol/ModuleDirectory$Module.class
 space/exploration/communications/protocol/communication/MatrixCommunication$MatrixCall.class
 space/exploration/communications/protocol/spacecraftClock/SpacecraftClock$SclkPacket.class
+space/exploration/communications/protocol/spice/MSLRelativePositions$MSLRelPositionsPacket$Builder.class
 space/exploration/communications/protocol/radar/RadarContactListOuterClass$RadarContactList.class
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayload$TargetPackage$Builder.class
 space/exploration/communications/protocol/radar/PolarCoord$PolarPoint.class
@@ -109,6 +114,7 @@ space/exploration/communications/protocol/spacecraftClock/SpacecraftClock$SclkPa
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayload$1.class
 space/exploration/communications/protocol/service/SeasonalWeather.class
 space/exploration/communications/protocol/radar/PolarCoord$PolarPointOrBuilder.class
+space/exploration/communications/protocol/spice/MSLRelativePositions$MSLRelPositionsPacket$1.class
 space/exploration/communications/protocol/propulsion/TelemetryDataOuterClass.class
 space/exploration/communications/protocol/communication/RoverStatusOuterClass$RoverStatus$Location$1.class
 space/exploration/communications/protocol/spacecraftClock/SpacecraftClock$SclkPacket$1.class

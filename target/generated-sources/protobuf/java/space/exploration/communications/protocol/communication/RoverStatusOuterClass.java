@@ -80,6 +80,19 @@ public final class RoverStatusOuterClass {
      */
     com.google.protobuf.ByteString
         getModuleNameBytes();
+
+    /**
+     * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+     */
+    boolean hasMslPositionsPacket();
+    /**
+     * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+     */
+    space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket getMslPositionsPacket();
+    /**
+     * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+     */
+    space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacketOrBuilder getMslPositionsPacketOrBuilder();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.communication.RoverStatus}
@@ -181,6 +194,19 @@ public final class RoverStatusOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               moduleName_ = s;
+              break;
+            }
+            case 82: {
+              space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.Builder subBuilder = null;
+              if (mslPositionsPacket_ != null) {
+                subBuilder = mslPositionsPacket_.toBuilder();
+              }
+              mslPositionsPacket_ = input.readMessage(space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mslPositionsPacket_);
+                mslPositionsPacket_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -841,6 +867,27 @@ public final class RoverStatusOuterClass {
       }
     }
 
+    public static final int MSLPOSITIONSPACKET_FIELD_NUMBER = 10;
+    private space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket mslPositionsPacket_;
+    /**
+     * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+     */
+    public boolean hasMslPositionsPacket() {
+      return mslPositionsPacket_ != null;
+    }
+    /**
+     * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+     */
+    public space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket getMslPositionsPacket() {
+      return mslPositionsPacket_ == null ? space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.getDefaultInstance() : mslPositionsPacket_;
+    }
+    /**
+     * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+     */
+    public space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacketOrBuilder getMslPositionsPacketOrBuilder() {
+      return getMslPositionsPacket();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -879,6 +926,9 @@ public final class RoverStatusOuterClass {
       }
       if (!getModuleNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, moduleName_);
+      }
+      if (mslPositionsPacket_ != null) {
+        output.writeMessage(10, getMslPositionsPacket());
       }
     }
 
@@ -921,6 +971,10 @@ public final class RoverStatusOuterClass {
       if (!getModuleNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, moduleName_);
       }
+      if (mslPositionsPacket_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getMslPositionsPacket());
+      }
       memoizedSize = size;
       return size;
     }
@@ -958,6 +1012,11 @@ public final class RoverStatusOuterClass {
           .equals(other.getModuleMessage());
       result = result && getModuleName()
           .equals(other.getModuleName());
+      result = result && (hasMslPositionsPacket() == other.hasMslPositionsPacket());
+      if (hasMslPositionsPacket()) {
+        result = result && getMslPositionsPacket()
+            .equals(other.getMslPositionsPacket());
+      }
       return result;
     }
 
@@ -990,6 +1049,10 @@ public final class RoverStatusOuterClass {
       hash = (53 * hash) + getModuleMessage().hashCode();
       hash = (37 * hash) + MODULENAME_FIELD_NUMBER;
       hash = (53 * hash) + getModuleName().hashCode();
+      if (hasMslPositionsPacket()) {
+        hash = (37 * hash) + MSLPOSITIONSPACKET_FIELD_NUMBER;
+        hash = (53 * hash) + getMslPositionsPacket().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1130,6 +1193,12 @@ public final class RoverStatusOuterClass {
 
         moduleName_ = "";
 
+        if (mslPositionsPacketBuilder_ == null) {
+          mslPositionsPacket_ = null;
+        } else {
+          mslPositionsPacket_ = null;
+          mslPositionsPacketBuilder_ = null;
+        }
         return this;
       }
 
@@ -1165,6 +1234,11 @@ public final class RoverStatusOuterClass {
         result.notes_ = notes_;
         result.moduleMessage_ = moduleMessage_;
         result.moduleName_ = moduleName_;
+        if (mslPositionsPacketBuilder_ == null) {
+          result.mslPositionsPacket_ = mslPositionsPacket_;
+        } else {
+          result.mslPositionsPacket_ = mslPositionsPacketBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1234,6 +1308,9 @@ public final class RoverStatusOuterClass {
         if (!other.getModuleName().isEmpty()) {
           moduleName_ = other.moduleName_;
           onChanged();
+        }
+        if (other.hasMslPositionsPacket()) {
+          mergeMslPositionsPacket(other.getMslPositionsPacket());
         }
         onChanged();
         return this;
@@ -1674,6 +1751,123 @@ public final class RoverStatusOuterClass {
         onChanged();
         return this;
       }
+
+      private space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket mslPositionsPacket_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket, space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.Builder, space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacketOrBuilder> mslPositionsPacketBuilder_;
+      /**
+       * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+       */
+      public boolean hasMslPositionsPacket() {
+        return mslPositionsPacketBuilder_ != null || mslPositionsPacket_ != null;
+      }
+      /**
+       * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+       */
+      public space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket getMslPositionsPacket() {
+        if (mslPositionsPacketBuilder_ == null) {
+          return mslPositionsPacket_ == null ? space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.getDefaultInstance() : mslPositionsPacket_;
+        } else {
+          return mslPositionsPacketBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+       */
+      public Builder setMslPositionsPacket(space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket value) {
+        if (mslPositionsPacketBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mslPositionsPacket_ = value;
+          onChanged();
+        } else {
+          mslPositionsPacketBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+       */
+      public Builder setMslPositionsPacket(
+          space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.Builder builderForValue) {
+        if (mslPositionsPacketBuilder_ == null) {
+          mslPositionsPacket_ = builderForValue.build();
+          onChanged();
+        } else {
+          mslPositionsPacketBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+       */
+      public Builder mergeMslPositionsPacket(space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket value) {
+        if (mslPositionsPacketBuilder_ == null) {
+          if (mslPositionsPacket_ != null) {
+            mslPositionsPacket_ =
+              space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.newBuilder(mslPositionsPacket_).mergeFrom(value).buildPartial();
+          } else {
+            mslPositionsPacket_ = value;
+          }
+          onChanged();
+        } else {
+          mslPositionsPacketBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+       */
+      public Builder clearMslPositionsPacket() {
+        if (mslPositionsPacketBuilder_ == null) {
+          mslPositionsPacket_ = null;
+          onChanged();
+        } else {
+          mslPositionsPacket_ = null;
+          mslPositionsPacketBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+       */
+      public space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.Builder getMslPositionsPacketBuilder() {
+        
+        onChanged();
+        return getMslPositionsPacketFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+       */
+      public space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacketOrBuilder getMslPositionsPacketOrBuilder() {
+        if (mslPositionsPacketBuilder_ != null) {
+          return mslPositionsPacketBuilder_.getMessageOrBuilder();
+        } else {
+          return mslPositionsPacket_ == null ?
+              space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.getDefaultInstance() : mslPositionsPacket_;
+        }
+      }
+      /**
+       * <code>.space.exploration.communications.protocol.spice.MSLRelPositionsPacket mslPositionsPacket = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket, space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.Builder, space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacketOrBuilder> 
+          getMslPositionsPacketFieldBuilder() {
+        if (mslPositionsPacketBuilder_ == null) {
+          mslPositionsPacketBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket, space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacket.Builder, space.exploration.communications.protocol.spice.MSLRelativePositions.MSLRelPositionsPacketOrBuilder>(
+                  getMslPositionsPacket(),
+                  getParentForChildren(),
+                  isClean());
+          mslPositionsPacket_ = null;
+        }
+        return mslPositionsPacketBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1743,15 +1937,18 @@ public final class RoverStatusOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021RoverStatus.proto\0227space.exploration.c" +
-      "ommunications.protocol.communication\"\247\002\n" +
-      "\013RoverStatus\022\014\n\004SCET\030\001 \001(\003\022\013\n\003ert\030\002 \001(\003\022" +
-      "\021\n\tsolNumber\030\003 \001(\005\022_\n\010location\030\004 \001(\0132M.s" +
+      "ommunications.protocol.communication\032\032MS" +
+      "LRelativePositions.proto\"\213\003\n\013RoverStatus" +
+      "\022\014\n\004SCET\030\001 \001(\003\022\013\n\003ert\030\002 \001(\003\022\021\n\tsolNumber" +
+      "\030\003 \001(\005\022_\n\010location\030\004 \001(\0132M.space.explora" +
+      "tion.communications.protocol.communicati" +
+      "on.RoverStatus.Location\022\024\n\014batteryLevel\030" +
+      "\005 \001(\005\022\027\n\017moduleReporting\030\006 \001(\005\022\r\n\005notes\030" +
+      "\007 \001(\t\022\025\n\rmoduleMessage\030\010 \001(\014\022\022\n\nmoduleNa" +
+      "me\030\t \001(\t\022b\n\022mslPositionsPacket\030\n \001(\0132F.s",
       "pace.exploration.communications.protocol" +
-      ".communication.RoverStatus.Location\022\024\n\014b" +
-      "atteryLevel\030\005 \001(\005\022\027\n\017moduleReporting\030\006 \001" +
-      "(\005\022\r\n\005notes\030\007 \001(\t\022\025\n\rmoduleMessage\030\010 \001(\014" +
-      "\022\022\n\nmoduleName\030\t \001(\t\032 \n\010Location\022\t\n\001x\030\001 " +
-      "\001(\005\022\t\n\001y\030\002 \001(\005b\006proto3"
+      ".spice.MSLRelPositionsPacket\032 \n\010Location" +
+      "\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1764,19 +1961,21 @@ public final class RoverStatusOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          space.exploration.communications.protocol.spice.MSLRelativePositions.getDescriptor(),
         }, assigner);
     internal_static_space_exploration_communications_protocol_communication_RoverStatus_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_space_exploration_communications_protocol_communication_RoverStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_communication_RoverStatus_descriptor,
-        new java.lang.String[] { "SCET", "Ert", "SolNumber", "Location", "BatteryLevel", "ModuleReporting", "Notes", "ModuleMessage", "ModuleName", });
+        new java.lang.String[] { "SCET", "Ert", "SolNumber", "Location", "BatteryLevel", "ModuleReporting", "Notes", "ModuleMessage", "ModuleName", "MslPositionsPacket", });
     internal_static_space_exploration_communications_protocol_communication_RoverStatus_Location_descriptor =
       internal_static_space_exploration_communications_protocol_communication_RoverStatus_descriptor.getNestedTypes().get(0);
     internal_static_space_exploration_communications_protocol_communication_RoverStatus_Location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_communication_RoverStatus_Location_descriptor,
         new java.lang.String[] { "X", "Y", });
+    space.exploration.communications.protocol.spice.MSLRelativePositions.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
