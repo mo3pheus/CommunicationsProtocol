@@ -97,6 +97,11 @@ public final class SpacecraftClock {
      */
     com.google.protobuf.ByteString
         getApplicableTimeFrameBytes();
+
+    /**
+     * <code>int32 sol = 11;</code>
+     */
+    int getSol();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.spacecraftClock.SclkPacket}
@@ -120,6 +125,7 @@ public final class SpacecraftClock {
       ephemerisTime_ = 0D;
       clockFile_ = "";
       applicableTimeFrame_ = "";
+      sol_ = 0;
     }
 
     @java.lang.Override
@@ -201,6 +207,11 @@ public final class SpacecraftClock {
               java.lang.String s = input.readStringRequireUtf8();
 
               applicableTimeFrame_ = s;
+              break;
+            }
+            case 88: {
+
+              sol_ = input.readInt32();
               break;
             }
           }
@@ -466,6 +477,15 @@ public final class SpacecraftClock {
       }
     }
 
+    public static final int SOL_FIELD_NUMBER = 11;
+    private int sol_;
+    /**
+     * <code>int32 sol = 11;</code>
+     */
+    public int getSol() {
+      return sol_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -508,6 +528,9 @@ public final class SpacecraftClock {
       if (!getApplicableTimeFrameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, applicableTimeFrame_);
       }
+      if (sol_ != 0) {
+        output.writeInt32(11, sol_);
+      }
     }
 
     public int getSerializedSize() {
@@ -549,6 +572,10 @@ public final class SpacecraftClock {
       if (!getApplicableTimeFrameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, applicableTimeFrame_);
       }
+      if (sol_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, sol_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -587,6 +614,8 @@ public final class SpacecraftClock {
           .equals(other.getClockFile());
       result = result && getApplicableTimeFrame()
           .equals(other.getApplicableTimeFrame());
+      result = result && (getSol()
+          == other.getSol());
       return result;
     }
 
@@ -620,6 +649,8 @@ public final class SpacecraftClock {
       hash = (53 * hash) + getClockFile().hashCode();
       hash = (37 * hash) + APPLICABLETIMEFRAME_FIELD_NUMBER;
       hash = (53 * hash) + getApplicableTimeFrame().hashCode();
+      hash = (37 * hash) + SOL_FIELD_NUMBER;
+      hash = (53 * hash) + getSol();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -758,6 +789,8 @@ public final class SpacecraftClock {
 
         applicableTimeFrame_ = "";
 
+        sol_ = 0;
+
         return this;
       }
 
@@ -790,6 +823,7 @@ public final class SpacecraftClock {
         result.ephemerisTime_ = ephemerisTime_;
         result.clockFile_ = clockFile_;
         result.applicableTimeFrame_ = applicableTimeFrame_;
+        result.sol_ = sol_;
         onBuilt();
         return result;
       }
@@ -866,6 +900,9 @@ public final class SpacecraftClock {
         if (!other.getApplicableTimeFrame().isEmpty()) {
           applicableTimeFrame_ = other.applicableTimeFrame_;
           onChanged();
+        }
+        if (other.getSol() != 0) {
+          setSol(other.getSol());
         }
         onChanged();
         return this;
@@ -1410,6 +1447,32 @@ public final class SpacecraftClock {
         onChanged();
         return this;
       }
+
+      private int sol_ ;
+      /**
+       * <code>int32 sol = 11;</code>
+       */
+      public int getSol() {
+        return sol_;
+      }
+      /**
+       * <code>int32 sol = 11;</code>
+       */
+      public Builder setSol(int value) {
+        
+        sol_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 sol = 11;</code>
+       */
+      public Builder clearSol() {
+        
+        sol_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1475,13 +1538,13 @@ public final class SpacecraftClock {
     java.lang.String[] descriptorData = {
       "\n\025SpacecraftClock.proto\0229space.explorati" +
       "on.communications.protocol.spacecraftClo" +
-      "ck\"\353\001\n\nSclkPacket\022\017\n\007utcTime\030\001 \001(\t\022\021\n\tsc" +
+      "ck\"\370\001\n\nSclkPacket\022\017\n\007utcTime\030\001 \001(\t\022\021\n\tsc" +
       "lkValue\030\002 \001(\t\022\031\n\021missionDurationMS\030\003 \001(\003" +
       "\022\027\n\017timeScaleFactor\030\004 \001(\005\022\021\n\tstartTime\030\005" +
       " \001(\t\022\025\n\rtimeElapsedMs\030\006 \001(\003\022\024\n\014calendarT" +
       "ime\030\007 \001(\t\022\025\n\rephemerisTime\030\010 \001(\001\022\021\n\tcloc" +
       "kFile\030\t \001(\t\022\033\n\023applicableTimeFrame\030\n \001(\t" +
-      "b\006proto3"
+      "\022\013\n\003sol\030\013 \001(\005b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1500,7 +1563,7 @@ public final class SpacecraftClock {
     internal_static_space_exploration_communications_protocol_spacecraftClock_SclkPacket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_spacecraftClock_SclkPacket_descriptor,
-        new java.lang.String[] { "UtcTime", "SclkValue", "MissionDurationMS", "TimeScaleFactor", "StartTime", "TimeElapsedMs", "CalendarTime", "EphemerisTime", "ClockFile", "ApplicableTimeFrame", });
+        new java.lang.String[] { "UtcTime", "SclkValue", "MissionDurationMS", "TimeScaleFactor", "StartTime", "TimeElapsedMs", "CalendarTime", "EphemerisTime", "ClockFile", "ApplicableTimeFrame", "Sol", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

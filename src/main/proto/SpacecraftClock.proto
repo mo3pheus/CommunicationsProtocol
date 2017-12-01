@@ -13,5 +13,6 @@ message SclkPacket {
     double ephemerisTime = 8;
     string clockFile = 9;
     string applicableTimeFrame = 10;
+    int32 sol = 11;
 }
 

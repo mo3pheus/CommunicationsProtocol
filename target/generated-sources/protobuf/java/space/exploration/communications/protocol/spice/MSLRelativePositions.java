@@ -117,6 +117,21 @@ public final class MSLRelativePositions {
      * <code>double angSepHGAEarth = 8;</code>
      */
     double getAngSepHGAEarth();
+
+    /**
+     * <code>string utcTime = 9;</code>
+     */
+    java.lang.String getUtcTime();
+    /**
+     * <code>string utcTime = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getUtcTimeBytes();
+
+    /**
+     * <code>bool hgaPass = 10;</code>
+     */
+    boolean getHgaPass();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.spice.MSLRelPositionsPacket}
@@ -138,6 +153,8 @@ public final class MSLRelativePositions {
       positionEarthWRTCuriosity_ = java.util.Collections.emptyList();
       owltEarthMSL2_ = 0D;
       angSepHGAEarth_ = 0D;
+      utcTime_ = "";
+      hgaPass_ = false;
     }
 
     @java.lang.Override
@@ -251,6 +268,17 @@ public final class MSLRelativePositions {
             case 65: {
 
               angSepHGAEarth_ = input.readDouble();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              utcTime_ = s;
+              break;
+            }
+            case 80: {
+
+              hgaPass_ = input.readBool();
               break;
             }
           }
@@ -436,6 +464,49 @@ public final class MSLRelativePositions {
       return angSepHGAEarth_;
     }
 
+    public static final int UTCTIME_FIELD_NUMBER = 9;
+    private volatile java.lang.Object utcTime_;
+    /**
+     * <code>string utcTime = 9;</code>
+     */
+    public java.lang.String getUtcTime() {
+      java.lang.Object ref = utcTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        utcTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string utcTime = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUtcTimeBytes() {
+      java.lang.Object ref = utcTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        utcTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HGAPASS_FIELD_NUMBER = 10;
+    private boolean hgaPass_;
+    /**
+     * <code>bool hgaPass = 10;</code>
+     */
+    public boolean getHgaPass() {
+      return hgaPass_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -484,6 +555,12 @@ public final class MSLRelativePositions {
       }
       if (angSepHGAEarth_ != 0D) {
         output.writeDouble(8, angSepHGAEarth_);
+      }
+      if (!getUtcTimeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, utcTime_);
+      }
+      if (hgaPass_ != false) {
+        output.writeBool(10, hgaPass_);
       }
     }
 
@@ -545,6 +622,13 @@ public final class MSLRelativePositions {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(8, angSepHGAEarth_);
       }
+      if (!getUtcTimeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, utcTime_);
+      }
+      if (hgaPass_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, hgaPass_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -587,6 +671,10 @@ public final class MSLRelativePositions {
           java.lang.Double.doubleToLongBits(getAngSepHGAEarth())
           == java.lang.Double.doubleToLongBits(
               other.getAngSepHGAEarth()));
+      result = result && getUtcTime()
+          .equals(other.getUtcTime());
+      result = result && (getHgaPass()
+          == other.getHgaPass());
       return result;
     }
 
@@ -624,6 +712,11 @@ public final class MSLRelativePositions {
       hash = (37 * hash) + ANGSEPHGAEARTH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getAngSepHGAEarth()));
+      hash = (37 * hash) + UTCTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUtcTime().hashCode();
+      hash = (37 * hash) + HGAPASS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHgaPass());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -758,6 +851,10 @@ public final class MSLRelativePositions {
 
         angSepHGAEarth_ = 0D;
 
+        utcTime_ = "";
+
+        hgaPass_ = false;
+
         return this;
       }
 
@@ -802,6 +899,8 @@ public final class MSLRelativePositions {
         result.positionEarthWRTCuriosity_ = positionEarthWRTCuriosity_;
         result.owltEarthMSL2_ = owltEarthMSL2_;
         result.angSepHGAEarth_ = angSepHGAEarth_;
+        result.utcTime_ = utcTime_;
+        result.hgaPass_ = hgaPass_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -888,6 +987,13 @@ public final class MSLRelativePositions {
         }
         if (other.getAngSepHGAEarth() != 0D) {
           setAngSepHGAEarth(other.getAngSepHGAEarth());
+        }
+        if (!other.getUtcTime().isEmpty()) {
+          utcTime_ = other.utcTime_;
+          onChanged();
+        }
+        if (other.getHgaPass() != false) {
+          setHgaPass(other.getHgaPass());
         }
         onChanged();
         return this;
@@ -1327,6 +1433,101 @@ public final class MSLRelativePositions {
         onChanged();
         return this;
       }
+
+      private java.lang.Object utcTime_ = "";
+      /**
+       * <code>string utcTime = 9;</code>
+       */
+      public java.lang.String getUtcTime() {
+        java.lang.Object ref = utcTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          utcTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string utcTime = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUtcTimeBytes() {
+        java.lang.Object ref = utcTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          utcTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string utcTime = 9;</code>
+       */
+      public Builder setUtcTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        utcTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string utcTime = 9;</code>
+       */
+      public Builder clearUtcTime() {
+        
+        utcTime_ = getDefaultInstance().getUtcTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string utcTime = 9;</code>
+       */
+      public Builder setUtcTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        utcTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean hgaPass_ ;
+      /**
+       * <code>bool hgaPass = 10;</code>
+       */
+      public boolean getHgaPass() {
+        return hgaPass_;
+      }
+      /**
+       * <code>bool hgaPass = 10;</code>
+       */
+      public Builder setHgaPass(boolean value) {
+        
+        hgaPass_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool hgaPass = 10;</code>
+       */
+      public Builder clearHgaPass() {
+        
+        hgaPass_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1391,13 +1592,14 @@ public final class MSLRelativePositions {
   static {
     java.lang.String[] descriptorData = {
       "\n\032MSLRelativePositions.proto\022/space.expl" +
-      "oration.communications.protocol.spice\"\330\001" +
+      "oration.communications.protocol.spice\"\372\001" +
       "\n\025MSLRelPositionsPacket\022\025\n\rephemerisTime" +
       "\030\001 \001(\001\022\026\n\016stateCuriosity\030\002 \003(\001\022\024\n\014owltMS" +
       "LEarth\030\003 \001(\001\022\022\n\nstateEarth\030\004 \003(\001\022\024\n\014owlt" +
       "EarthMSL\030\005 \001(\001\022!\n\031positionEarthWRTCurios" +
       "ity\030\006 \003(\001\022\025\n\rowltEarthMSL2\030\007 \001(\001\022\026\n\016angS" +
-      "epHGAEarth\030\010 \001(\001b\006proto3"
+      "epHGAEarth\030\010 \001(\001\022\017\n\007utcTime\030\t \001(\t\022\017\n\007hga" +
+      "Pass\030\n \001(\010b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1416,7 +1618,7 @@ public final class MSLRelativePositions {
     internal_static_space_exploration_communications_protocol_spice_MSLRelPositionsPacket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_spice_MSLRelPositionsPacket_descriptor,
-        new java.lang.String[] { "EphemerisTime", "StateCuriosity", "OwltMSLEarth", "StateEarth", "OwltEarthMSL", "PositionEarthWRTCuriosity", "OwltEarthMSL2", "AngSepHGAEarth", });
+        new java.lang.String[] { "EphemerisTime", "StateCuriosity", "OwltMSLEarth", "StateEarth", "OwltEarthMSL", "PositionEarthWRTCuriosity", "OwltEarthMSL2", "AngSepHGAEarth", "UtcTime", "HgaPass", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

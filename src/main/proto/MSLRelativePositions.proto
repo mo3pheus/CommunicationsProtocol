@@ -12,4 +12,6 @@ message MSLRelPositionsPacket {
     repeated double positionEarthWRTCuriosity = 6; //x,y,z in km
     double owltEarthMSL2 = 7;
     double angSepHGAEarth = 8;
+    string utcTime = 9;
+    bool hgaPass = 10;
 }
