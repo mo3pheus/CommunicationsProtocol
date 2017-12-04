@@ -132,6 +132,11 @@ public final class MSLRelativePositions {
      * <code>bool hgaPass = 10;</code>
      */
     boolean getHgaPass();
+
+    /**
+     * <code>int32 sol = 11;</code>
+     */
+    int getSol();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.spice.MSLRelPositionsPacket}
@@ -155,6 +160,7 @@ public final class MSLRelativePositions {
       angSepHGAEarth_ = 0D;
       utcTime_ = "";
       hgaPass_ = false;
+      sol_ = 0;
     }
 
     @java.lang.Override
@@ -279,6 +285,11 @@ public final class MSLRelativePositions {
             case 80: {
 
               hgaPass_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              sol_ = input.readInt32();
               break;
             }
           }
@@ -507,6 +518,15 @@ public final class MSLRelativePositions {
       return hgaPass_;
     }
 
+    public static final int SOL_FIELD_NUMBER = 11;
+    private int sol_;
+    /**
+     * <code>int32 sol = 11;</code>
+     */
+    public int getSol() {
+      return sol_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -561,6 +581,9 @@ public final class MSLRelativePositions {
       }
       if (hgaPass_ != false) {
         output.writeBool(10, hgaPass_);
+      }
+      if (sol_ != 0) {
+        output.writeInt32(11, sol_);
       }
     }
 
@@ -629,6 +652,10 @@ public final class MSLRelativePositions {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, hgaPass_);
       }
+      if (sol_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, sol_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -675,6 +702,8 @@ public final class MSLRelativePositions {
           .equals(other.getUtcTime());
       result = result && (getHgaPass()
           == other.getHgaPass());
+      result = result && (getSol()
+          == other.getSol());
       return result;
     }
 
@@ -717,6 +746,8 @@ public final class MSLRelativePositions {
       hash = (37 * hash) + HGAPASS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getHgaPass());
+      hash = (37 * hash) + SOL_FIELD_NUMBER;
+      hash = (53 * hash) + getSol();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -855,6 +886,8 @@ public final class MSLRelativePositions {
 
         hgaPass_ = false;
 
+        sol_ = 0;
+
         return this;
       }
 
@@ -901,6 +934,7 @@ public final class MSLRelativePositions {
         result.angSepHGAEarth_ = angSepHGAEarth_;
         result.utcTime_ = utcTime_;
         result.hgaPass_ = hgaPass_;
+        result.sol_ = sol_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -994,6 +1028,9 @@ public final class MSLRelativePositions {
         }
         if (other.getHgaPass() != false) {
           setHgaPass(other.getHgaPass());
+        }
+        if (other.getSol() != 0) {
+          setSol(other.getSol());
         }
         onChanged();
         return this;
@@ -1528,6 +1565,32 @@ public final class MSLRelativePositions {
         onChanged();
         return this;
       }
+
+      private int sol_ ;
+      /**
+       * <code>int32 sol = 11;</code>
+       */
+      public int getSol() {
+        return sol_;
+      }
+      /**
+       * <code>int32 sol = 11;</code>
+       */
+      public Builder setSol(int value) {
+        
+        sol_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 sol = 11;</code>
+       */
+      public Builder clearSol() {
+        
+        sol_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1592,14 +1655,14 @@ public final class MSLRelativePositions {
   static {
     java.lang.String[] descriptorData = {
       "\n\032MSLRelativePositions.proto\022/space.expl" +
-      "oration.communications.protocol.spice\"\372\001" +
+      "oration.communications.protocol.spice\"\207\002" +
       "\n\025MSLRelPositionsPacket\022\025\n\rephemerisTime" +
       "\030\001 \001(\001\022\026\n\016stateCuriosity\030\002 \003(\001\022\024\n\014owltMS" +
       "LEarth\030\003 \001(\001\022\022\n\nstateEarth\030\004 \003(\001\022\024\n\014owlt" +
       "EarthMSL\030\005 \001(\001\022!\n\031positionEarthWRTCurios" +
       "ity\030\006 \003(\001\022\025\n\rowltEarthMSL2\030\007 \001(\001\022\026\n\016angS" +
       "epHGAEarth\030\010 \001(\001\022\017\n\007utcTime\030\t \001(\t\022\017\n\007hga" +
-      "Pass\030\n \001(\010b\006proto3"
+      "Pass\030\n \001(\010\022\013\n\003sol\030\013 \001(\005b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1618,7 +1681,7 @@ public final class MSLRelativePositions {
     internal_static_space_exploration_communications_protocol_spice_MSLRelPositionsPacket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_spice_MSLRelPositionsPacket_descriptor,
-        new java.lang.String[] { "EphemerisTime", "StateCuriosity", "OwltMSLEarth", "StateEarth", "OwltEarthMSL", "PositionEarthWRTCuriosity", "OwltEarthMSL2", "AngSepHGAEarth", "UtcTime", "HgaPass", });
+        new java.lang.String[] { "EphemerisTime", "StateCuriosity", "OwltMSLEarth", "StateEarth", "OwltEarthMSL", "PositionEarthWRTCuriosity", "OwltEarthMSL2", "AngSepHGAEarth", "UtcTime", "HgaPass", "Sol", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
