@@ -137,6 +137,16 @@ public final class MSLRelativePositions {
      * <code>int32 sol = 11;</code>
      */
     int getSol();
+
+    /**
+     * <code>string sclkValue = 12;</code>
+     */
+    java.lang.String getSclkValue();
+    /**
+     * <code>string sclkValue = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getSclkValueBytes();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.spice.MSLRelPositionsPacket}
@@ -161,6 +171,7 @@ public final class MSLRelativePositions {
       utcTime_ = "";
       hgaPass_ = false;
       sol_ = 0;
+      sclkValue_ = "";
     }
 
     @java.lang.Override
@@ -290,6 +301,12 @@ public final class MSLRelativePositions {
             case 88: {
 
               sol_ = input.readInt32();
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sclkValue_ = s;
               break;
             }
           }
@@ -527,6 +544,40 @@ public final class MSLRelativePositions {
       return sol_;
     }
 
+    public static final int SCLKVALUE_FIELD_NUMBER = 12;
+    private volatile java.lang.Object sclkValue_;
+    /**
+     * <code>string sclkValue = 12;</code>
+     */
+    public java.lang.String getSclkValue() {
+      java.lang.Object ref = sclkValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sclkValue_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sclkValue = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSclkValueBytes() {
+      java.lang.Object ref = sclkValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sclkValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -584,6 +635,9 @@ public final class MSLRelativePositions {
       }
       if (sol_ != 0) {
         output.writeInt32(11, sol_);
+      }
+      if (!getSclkValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, sclkValue_);
       }
     }
 
@@ -656,6 +710,9 @@ public final class MSLRelativePositions {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, sol_);
       }
+      if (!getSclkValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, sclkValue_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -704,6 +761,8 @@ public final class MSLRelativePositions {
           == other.getHgaPass());
       result = result && (getSol()
           == other.getSol());
+      result = result && getSclkValue()
+          .equals(other.getSclkValue());
       return result;
     }
 
@@ -748,6 +807,8 @@ public final class MSLRelativePositions {
           getHgaPass());
       hash = (37 * hash) + SOL_FIELD_NUMBER;
       hash = (53 * hash) + getSol();
+      hash = (37 * hash) + SCLKVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getSclkValue().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -888,6 +949,8 @@ public final class MSLRelativePositions {
 
         sol_ = 0;
 
+        sclkValue_ = "";
+
         return this;
       }
 
@@ -935,6 +998,7 @@ public final class MSLRelativePositions {
         result.utcTime_ = utcTime_;
         result.hgaPass_ = hgaPass_;
         result.sol_ = sol_;
+        result.sclkValue_ = sclkValue_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1031,6 +1095,10 @@ public final class MSLRelativePositions {
         }
         if (other.getSol() != 0) {
           setSol(other.getSol());
+        }
+        if (!other.getSclkValue().isEmpty()) {
+          sclkValue_ = other.sclkValue_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1591,6 +1659,75 @@ public final class MSLRelativePositions {
         onChanged();
         return this;
       }
+
+      private java.lang.Object sclkValue_ = "";
+      /**
+       * <code>string sclkValue = 12;</code>
+       */
+      public java.lang.String getSclkValue() {
+        java.lang.Object ref = sclkValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sclkValue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sclkValue = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSclkValueBytes() {
+        java.lang.Object ref = sclkValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sclkValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sclkValue = 12;</code>
+       */
+      public Builder setSclkValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sclkValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sclkValue = 12;</code>
+       */
+      public Builder clearSclkValue() {
+        
+        sclkValue_ = getDefaultInstance().getSclkValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sclkValue = 12;</code>
+       */
+      public Builder setSclkValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sclkValue_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1655,14 +1792,15 @@ public final class MSLRelativePositions {
   static {
     java.lang.String[] descriptorData = {
       "\n\032MSLRelativePositions.proto\022/space.expl" +
-      "oration.communications.protocol.spice\"\207\002" +
+      "oration.communications.protocol.spice\"\232\002" +
       "\n\025MSLRelPositionsPacket\022\025\n\rephemerisTime" +
       "\030\001 \001(\001\022\026\n\016stateCuriosity\030\002 \003(\001\022\024\n\014owltMS" +
       "LEarth\030\003 \001(\001\022\022\n\nstateEarth\030\004 \003(\001\022\024\n\014owlt" +
       "EarthMSL\030\005 \001(\001\022!\n\031positionEarthWRTCurios" +
       "ity\030\006 \003(\001\022\025\n\rowltEarthMSL2\030\007 \001(\001\022\026\n\016angS" +
       "epHGAEarth\030\010 \001(\001\022\017\n\007utcTime\030\t \001(\t\022\017\n\007hga" +
-      "Pass\030\n \001(\010\022\013\n\003sol\030\013 \001(\005b\006proto3"
+      "Pass\030\n \001(\010\022\013\n\003sol\030\013 \001(\005\022\021\n\tsclkValue\030\014 \001" +
+      "(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1681,7 +1819,7 @@ public final class MSLRelativePositions {
     internal_static_space_exploration_communications_protocol_spice_MSLRelPositionsPacket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_spice_MSLRelPositionsPacket_descriptor,
-        new java.lang.String[] { "EphemerisTime", "StateCuriosity", "OwltMSLEarth", "StateEarth", "OwltEarthMSL", "PositionEarthWRTCuriosity", "OwltEarthMSL2", "AngSepHGAEarth", "UtcTime", "HgaPass", "Sol", });
+        new java.lang.String[] { "EphemerisTime", "StateCuriosity", "OwltMSLEarth", "StateEarth", "OwltEarthMSL", "PositionEarthWRTCuriosity", "OwltEarthMSL2", "AngSepHGAEarth", "UtcTime", "HgaPass", "Sol", "SclkValue", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -102,6 +102,11 @@ public final class SpacecraftClock {
      * <code>int32 sol = 11;</code>
      */
     int getSol();
+
+    /**
+     * <code>int64 lifeSpan = 12;</code>
+     */
+    long getLifeSpan();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.spacecraftClock.SclkPacket}
@@ -126,6 +131,7 @@ public final class SpacecraftClock {
       clockFile_ = "";
       applicableTimeFrame_ = "";
       sol_ = 0;
+      lifeSpan_ = 0L;
     }
 
     @java.lang.Override
@@ -212,6 +218,11 @@ public final class SpacecraftClock {
             case 88: {
 
               sol_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              lifeSpan_ = input.readInt64();
               break;
             }
           }
@@ -486,6 +497,15 @@ public final class SpacecraftClock {
       return sol_;
     }
 
+    public static final int LIFESPAN_FIELD_NUMBER = 12;
+    private long lifeSpan_;
+    /**
+     * <code>int64 lifeSpan = 12;</code>
+     */
+    public long getLifeSpan() {
+      return lifeSpan_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -530,6 +550,9 @@ public final class SpacecraftClock {
       }
       if (sol_ != 0) {
         output.writeInt32(11, sol_);
+      }
+      if (lifeSpan_ != 0L) {
+        output.writeInt64(12, lifeSpan_);
       }
     }
 
@@ -576,6 +599,10 @@ public final class SpacecraftClock {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, sol_);
       }
+      if (lifeSpan_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(12, lifeSpan_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -616,6 +643,8 @@ public final class SpacecraftClock {
           .equals(other.getApplicableTimeFrame());
       result = result && (getSol()
           == other.getSol());
+      result = result && (getLifeSpan()
+          == other.getLifeSpan());
       return result;
     }
 
@@ -651,6 +680,9 @@ public final class SpacecraftClock {
       hash = (53 * hash) + getApplicableTimeFrame().hashCode();
       hash = (37 * hash) + SOL_FIELD_NUMBER;
       hash = (53 * hash) + getSol();
+      hash = (37 * hash) + LIFESPAN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLifeSpan());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -791,6 +823,8 @@ public final class SpacecraftClock {
 
         sol_ = 0;
 
+        lifeSpan_ = 0L;
+
         return this;
       }
 
@@ -824,6 +858,7 @@ public final class SpacecraftClock {
         result.clockFile_ = clockFile_;
         result.applicableTimeFrame_ = applicableTimeFrame_;
         result.sol_ = sol_;
+        result.lifeSpan_ = lifeSpan_;
         onBuilt();
         return result;
       }
@@ -903,6 +938,9 @@ public final class SpacecraftClock {
         }
         if (other.getSol() != 0) {
           setSol(other.getSol());
+        }
+        if (other.getLifeSpan() != 0L) {
+          setLifeSpan(other.getLifeSpan());
         }
         onChanged();
         return this;
@@ -1473,6 +1511,32 @@ public final class SpacecraftClock {
         onChanged();
         return this;
       }
+
+      private long lifeSpan_ ;
+      /**
+       * <code>int64 lifeSpan = 12;</code>
+       */
+      public long getLifeSpan() {
+        return lifeSpan_;
+      }
+      /**
+       * <code>int64 lifeSpan = 12;</code>
+       */
+      public Builder setLifeSpan(long value) {
+        
+        lifeSpan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 lifeSpan = 12;</code>
+       */
+      public Builder clearLifeSpan() {
+        
+        lifeSpan_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1538,13 +1602,13 @@ public final class SpacecraftClock {
     java.lang.String[] descriptorData = {
       "\n\025SpacecraftClock.proto\0229space.explorati" +
       "on.communications.protocol.spacecraftClo" +
-      "ck\"\370\001\n\nSclkPacket\022\017\n\007utcTime\030\001 \001(\t\022\021\n\tsc" +
+      "ck\"\212\002\n\nSclkPacket\022\017\n\007utcTime\030\001 \001(\t\022\021\n\tsc" +
       "lkValue\030\002 \001(\t\022\031\n\021missionDurationMS\030\003 \001(\003" +
       "\022\027\n\017timeScaleFactor\030\004 \001(\005\022\021\n\tstartTime\030\005" +
       " \001(\t\022\025\n\rtimeElapsedMs\030\006 \001(\003\022\024\n\014calendarT" +
       "ime\030\007 \001(\t\022\025\n\rephemerisTime\030\010 \001(\001\022\021\n\tcloc" +
       "kFile\030\t \001(\t\022\033\n\023applicableTimeFrame\030\n \001(\t" +
-      "\022\013\n\003sol\030\013 \001(\005b\006proto3"
+      "\022\013\n\003sol\030\013 \001(\005\022\020\n\010lifeSpan\030\014 \001(\003b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1563,7 +1627,7 @@ public final class SpacecraftClock {
     internal_static_space_exploration_communications_protocol_spacecraftClock_SclkPacket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_spacecraftClock_SclkPacket_descriptor,
-        new java.lang.String[] { "UtcTime", "SclkValue", "MissionDurationMS", "TimeScaleFactor", "StartTime", "TimeElapsedMs", "CalendarTime", "EphemerisTime", "ClockFile", "ApplicableTimeFrame", "Sol", });
+        new java.lang.String[] { "UtcTime", "SclkValue", "MissionDurationMS", "TimeScaleFactor", "StartTime", "TimeElapsedMs", "CalendarTime", "EphemerisTime", "ClockFile", "ApplicableTimeFrame", "Sol", "LifeSpan", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

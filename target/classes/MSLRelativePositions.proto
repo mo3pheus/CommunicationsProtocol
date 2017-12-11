@@ -15,4 +15,5 @@ message MSLRelPositionsPacket {
     string utcTime = 9;
     bool hgaPass = 10;
     int32 sol = 11;
+    string sclkValue = 12;
 }
