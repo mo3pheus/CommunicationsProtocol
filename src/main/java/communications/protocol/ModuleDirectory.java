@@ -28,4 +28,7 @@ public class ModuleDirectory {
             return name;
         }
     }
+
+    public static final String SCLK_COMMAND = "GetSclkInformation";
+    public static final String SCLK_SYNC    = "SynchronizeClock";
 }

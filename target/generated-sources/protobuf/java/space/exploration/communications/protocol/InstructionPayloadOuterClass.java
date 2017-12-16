@@ -177,6 +177,16 @@ public final class InstructionPayloadOuterClass {
        */
       com.google.protobuf.ByteString
           getRoverSubModuleBytes();
+
+      /**
+       * <code>string utcTime = 6;</code>
+       */
+      java.lang.String getUtcTime();
+      /**
+       * <code>string utcTime = 6;</code>
+       */
+      com.google.protobuf.ByteString
+          getUtcTimeBytes();
     }
     /**
      * Protobuf type {@code space.exploration.communications.protocol.InstructionPayload.TargetPackage}
@@ -195,6 +205,7 @@ public final class InstructionPayloadOuterClass {
         action_ = "";
         auxiliaryData_ = com.google.protobuf.ByteString.EMPTY;
         roverSubModule_ = "";
+        utcTime_ = "";
       }
 
       @java.lang.Override
@@ -247,6 +258,12 @@ public final class InstructionPayloadOuterClass {
                 java.lang.String s = input.readStringRequireUtf8();
 
                 roverSubModule_ = s;
+                break;
+              }
+              case 50: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                utcTime_ = s;
                 break;
               }
             }
@@ -367,6 +384,40 @@ public final class InstructionPayloadOuterClass {
         }
       }
 
+      public static final int UTCTIME_FIELD_NUMBER = 6;
+      private volatile java.lang.Object utcTime_;
+      /**
+       * <code>string utcTime = 6;</code>
+       */
+      public java.lang.String getUtcTime() {
+        java.lang.Object ref = utcTime_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          utcTime_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string utcTime = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUtcTimeBytes() {
+        java.lang.Object ref = utcTime_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          utcTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -394,6 +445,9 @@ public final class InstructionPayloadOuterClass {
         if (!getRoverSubModuleBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 5, roverSubModule_);
         }
+        if (!getUtcTimeBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 6, utcTime_);
+        }
       }
 
       public int getSerializedSize() {
@@ -418,6 +472,9 @@ public final class InstructionPayloadOuterClass {
         }
         if (!getRoverSubModuleBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, roverSubModule_);
+        }
+        if (!getUtcTimeBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, utcTime_);
         }
         memoizedSize = size;
         return size;
@@ -445,6 +502,8 @@ public final class InstructionPayloadOuterClass {
             .equals(other.getAuxiliaryData());
         result = result && getRoverSubModule()
             .equals(other.getRoverSubModule());
+        result = result && getUtcTime()
+            .equals(other.getUtcTime());
         return result;
       }
 
@@ -465,6 +524,8 @@ public final class InstructionPayloadOuterClass {
         hash = (53 * hash) + getAuxiliaryData().hashCode();
         hash = (37 * hash) + ROVERSUBMODULE_FIELD_NUMBER;
         hash = (53 * hash) + getRoverSubModule().hashCode();
+        hash = (37 * hash) + UTCTIME_FIELD_NUMBER;
+        hash = (53 * hash) + getUtcTime().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -593,6 +654,8 @@ public final class InstructionPayloadOuterClass {
 
           roverSubModule_ = "";
 
+          utcTime_ = "";
+
           return this;
         }
 
@@ -620,6 +683,7 @@ public final class InstructionPayloadOuterClass {
           result.action_ = action_;
           result.auxiliaryData_ = auxiliaryData_;
           result.roverSubModule_ = roverSubModule_;
+          result.utcTime_ = utcTime_;
           onBuilt();
           return result;
         }
@@ -676,6 +740,10 @@ public final class InstructionPayloadOuterClass {
           }
           if (!other.getRoverSubModule().isEmpty()) {
             roverSubModule_ = other.roverSubModule_;
+            onChanged();
+          }
+          if (!other.getUtcTime().isEmpty()) {
+            utcTime_ = other.utcTime_;
             onChanged();
           }
           onChanged();
@@ -919,6 +987,75 @@ public final class InstructionPayloadOuterClass {
   checkByteStringIsUtf8(value);
           
           roverSubModule_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object utcTime_ = "";
+        /**
+         * <code>string utcTime = 6;</code>
+         */
+        public java.lang.String getUtcTime() {
+          java.lang.Object ref = utcTime_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            utcTime_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string utcTime = 6;</code>
+         */
+        public com.google.protobuf.ByteString
+            getUtcTimeBytes() {
+          java.lang.Object ref = utcTime_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            utcTime_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string utcTime = 6;</code>
+         */
+        public Builder setUtcTime(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          utcTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string utcTime = 6;</code>
+         */
+        public Builder clearUtcTime() {
+          
+          utcTime_ = getDefaultInstance().getUtcTime();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string utcTime = 6;</code>
+         */
+        public Builder setUtcTimeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          utcTime_ = value;
           onChanged();
           return this;
         }
@@ -1732,14 +1869,15 @@ public final class InstructionPayloadOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030InstructionPayload.proto\022)space.explor" +
-      "ation.communications.protocol\"\225\002\n\022Instru" +
+      "ation.communications.protocol\"\246\002\n\022Instru" +
       "ctionPayload\022\021\n\ttimeStamp\030\001 \001(\003\022\013\n\003SOS\030\002" +
       " \001(\010\022\\\n\007targets\030\003 \003(\0132K.space.exploratio" +
       "n.communications.protocol.InstructionPay" +
-      "load.TargetPackage\032\200\001\n\rTargetPackage\022\023\n\013" +
+      "load.TargetPackage\032\221\001\n\rTargetPackage\022\023\n\013" +
       "roverModule\030\001 \001(\005\022\033\n\023estimatedPowerUsage" +
       "\030\002 \001(\005\022\016\n\006action\030\003 \001(\t\022\025\n\rauxiliaryData\030" +
-      "\004 \001(\014\022\026\n\016roverSubModule\030\005 \001(\tb\006proto3"
+      "\004 \001(\014\022\026\n\016roverSubModule\030\005 \001(\t\022\017\n\007utcTime" +
+      "\030\006 \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1764,7 +1902,7 @@ public final class InstructionPayloadOuterClass {
     internal_static_space_exploration_communications_protocol_InstructionPayload_TargetPackage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_InstructionPayload_TargetPackage_descriptor,
-        new java.lang.String[] { "RoverModule", "EstimatedPowerUsage", "Action", "AuxiliaryData", "RoverSubModule", });
+        new java.lang.String[] { "RoverModule", "EstimatedPowerUsage", "Action", "AuxiliaryData", "RoverSubModule", "UtcTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

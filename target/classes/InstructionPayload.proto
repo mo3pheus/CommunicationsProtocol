@@ -9,6 +9,7 @@ message InstructionPayload {
         string action = 3;
         bytes auxiliaryData = 4;
         string roverSubModule = 5;
+        string utcTime = 6;
     }
 
     int64 timeStamp = 1;
