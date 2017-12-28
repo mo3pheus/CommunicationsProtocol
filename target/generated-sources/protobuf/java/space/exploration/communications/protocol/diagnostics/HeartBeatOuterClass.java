@@ -34,38 +34,28 @@ public final class HeartBeatOuterClass {
     int getSolNumber();
 
     /**
-     * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+     */
+    java.util.List<space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth> 
+        getEquipmentHealthList();
+    /**
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+     */
+    space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth getEquipmentHealth(int index);
+    /**
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
      */
     int getEquipmentHealthCount();
     /**
-     * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
      */
-    boolean containsEquipmentHealth(
-        java.lang.String key);
+    java.util.List<? extends space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealthOrBuilder> 
+        getEquipmentHealthOrBuilderList();
     /**
-     * Use {@link #getEquipmentHealthMap()} instead.
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.Long>
-    getEquipmentHealth();
-    /**
-     * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.Long>
-    getEquipmentHealthMap();
-    /**
-     * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-     */
-
-    long getEquipmentHealthOrDefault(
-        java.lang.String key,
-        long defaultValue);
-    /**
-     * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-     */
-
-    long getEquipmentHealthOrThrow(
-        java.lang.String key);
+    space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealthOrBuilder getEquipmentHealthOrBuilder(
+        int index);
 
     /**
      * <code>int32 batteryLevel = 5;</code>
@@ -104,6 +94,11 @@ public final class HeartBeatOuterClass {
      * <code>.space.exploration.communications.protocol.communication.RoverStatus.Location location = 9;</code>
      */
     space.exploration.communications.protocol.communication.RoverStatusOuterClass.RoverStatus.LocationOrBuilder getLocationOrBuilder();
+
+    /**
+     * <code>int64 requestMetric = 10;</code>
+     */
+    long getRequestMetric();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.diagnostics.HeartBeat}
@@ -120,10 +115,12 @@ public final class HeartBeatOuterClass {
       sCET_ = 0L;
       ert_ = 0L;
       solNumber_ = 0;
+      equipmentHealth_ = java.util.Collections.emptyList();
       batteryLevel_ = 0;
       moduleReporting_ = 0;
       notes_ = "";
       diagnosticsMessage_ = com.google.protobuf.ByteString.EMPTY;
+      requestMetric_ = 0L;
     }
 
     @java.lang.Override
@@ -168,15 +165,11 @@ public final class HeartBeatOuterClass {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                equipmentHealth_ = com.google.protobuf.MapField.newMapField(
-                    EquipmentHealthDefaultEntryHolder.defaultEntry);
+                equipmentHealth_ = new java.util.ArrayList<space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth>();
                 mutable_bitField0_ |= 0x00000008;
               }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
-              equipmentHealth__ = input.readMessage(
-                  EquipmentHealthDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              equipmentHealth_.getMutableMap().put(
-                  equipmentHealth__.getKey(), equipmentHealth__.getValue());
+              equipmentHealth_.add(
+                  input.readMessage(space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.parser(), extensionRegistry));
               break;
             }
             case 40: {
@@ -213,6 +206,11 @@ public final class HeartBeatOuterClass {
 
               break;
             }
+            case 80: {
+
+              requestMetric_ = input.readInt64();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -221,6 +219,9 @@ public final class HeartBeatOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          equipmentHealth_ = java.util.Collections.unmodifiableList(equipmentHealth_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -229,17 +230,6 @@ public final class HeartBeatOuterClass {
       return space.exploration.communications.protocol.diagnostics.HeartBeatOuterClass.internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 4:
-          return internalGetEquipmentHealth();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return space.exploration.communications.protocol.diagnostics.HeartBeatOuterClass.internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_fieldAccessorTable
@@ -276,79 +266,38 @@ public final class HeartBeatOuterClass {
     }
 
     public static final int EQUIPMENTHEALTH_FIELD_NUMBER = 4;
-    private static final class EquipmentHealthDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.Long> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.Long>newDefaultInstance(
-                  space.exploration.communications.protocol.diagnostics.HeartBeatOuterClass.internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_EquipmentHealthEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.INT64,
-                  0L);
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.Long> equipmentHealth_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
-    internalGetEquipmentHealth() {
-      if (equipmentHealth_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            EquipmentHealthDefaultEntryHolder.defaultEntry);
-      }
+    private java.util.List<space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth> equipmentHealth_;
+    /**
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+     */
+    public java.util.List<space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth> getEquipmentHealthList() {
       return equipmentHealth_;
     }
-
+    /**
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+     */
+    public java.util.List<? extends space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealthOrBuilder> 
+        getEquipmentHealthOrBuilderList() {
+      return equipmentHealth_;
+    }
+    /**
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+     */
     public int getEquipmentHealthCount() {
-      return internalGetEquipmentHealth().getMap().size();
+      return equipmentHealth_.size();
     }
     /**
-     * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
      */
-
-    public boolean containsEquipmentHealth(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetEquipmentHealth().getMap().containsKey(key);
+    public space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth getEquipmentHealth(int index) {
+      return equipmentHealth_.get(index);
     }
     /**
-     * Use {@link #getEquipmentHealthMap()} instead.
+     * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
      */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.Long> getEquipmentHealth() {
-      return getEquipmentHealthMap();
-    }
-    /**
-     * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.Long> getEquipmentHealthMap() {
-      return internalGetEquipmentHealth().getMap();
-    }
-    /**
-     * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-     */
-
-    public long getEquipmentHealthOrDefault(
-        java.lang.String key,
-        long defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.Long> map =
-          internalGetEquipmentHealth().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-     */
-
-    public long getEquipmentHealthOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.Long> map =
-          internalGetEquipmentHealth().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealthOrBuilder getEquipmentHealthOrBuilder(
+        int index) {
+      return equipmentHealth_.get(index);
     }
 
     public static final int BATTERYLEVEL_FIELD_NUMBER = 5;
@@ -433,6 +382,15 @@ public final class HeartBeatOuterClass {
       return getLocation();
     }
 
+    public static final int REQUESTMETRIC_FIELD_NUMBER = 10;
+    private long requestMetric_;
+    /**
+     * <code>int64 requestMetric = 10;</code>
+     */
+    public long getRequestMetric() {
+      return requestMetric_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -454,12 +412,9 @@ public final class HeartBeatOuterClass {
       if (solNumber_ != 0) {
         output.writeInt32(3, solNumber_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetEquipmentHealth(),
-          EquipmentHealthDefaultEntryHolder.defaultEntry,
-          4);
+      for (int i = 0; i < equipmentHealth_.size(); i++) {
+        output.writeMessage(4, equipmentHealth_.get(i));
+      }
       if (batteryLevel_ != 0) {
         output.writeInt32(5, batteryLevel_);
       }
@@ -474,6 +429,9 @@ public final class HeartBeatOuterClass {
       }
       if (location_ != null) {
         output.writeMessage(9, getLocation());
+      }
+      if (requestMetric_ != 0L) {
+        output.writeInt64(10, requestMetric_);
       }
     }
 
@@ -494,15 +452,9 @@ public final class HeartBeatOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, solNumber_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
-           : internalGetEquipmentHealth().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
-        equipmentHealth__ = EquipmentHealthDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      for (int i = 0; i < equipmentHealth_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, equipmentHealth__);
+          .computeMessageSize(4, equipmentHealth_.get(i));
       }
       if (batteryLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -522,6 +474,10 @@ public final class HeartBeatOuterClass {
       if (location_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getLocation());
+      }
+      if (requestMetric_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(10, requestMetric_);
       }
       memoizedSize = size;
       return size;
@@ -545,8 +501,8 @@ public final class HeartBeatOuterClass {
           == other.getErt());
       result = result && (getSolNumber()
           == other.getSolNumber());
-      result = result && internalGetEquipmentHealth().equals(
-          other.internalGetEquipmentHealth());
+      result = result && getEquipmentHealthList()
+          .equals(other.getEquipmentHealthList());
       result = result && (getBatteryLevel()
           == other.getBatteryLevel());
       result = result && (getModuleReporting()
@@ -560,6 +516,8 @@ public final class HeartBeatOuterClass {
         result = result && getLocation()
             .equals(other.getLocation());
       }
+      result = result && (getRequestMetric()
+          == other.getRequestMetric());
       return result;
     }
 
@@ -578,9 +536,9 @@ public final class HeartBeatOuterClass {
           getErt());
       hash = (37 * hash) + SOLNUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getSolNumber();
-      if (!internalGetEquipmentHealth().getMap().isEmpty()) {
+      if (getEquipmentHealthCount() > 0) {
         hash = (37 * hash) + EQUIPMENTHEALTH_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetEquipmentHealth().hashCode();
+        hash = (53 * hash) + getEquipmentHealthList().hashCode();
       }
       hash = (37 * hash) + BATTERYLEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getBatteryLevel();
@@ -594,6 +552,9 @@ public final class HeartBeatOuterClass {
         hash = (37 * hash) + LOCATION_FIELD_NUMBER;
         hash = (53 * hash) + getLocation().hashCode();
       }
+      hash = (37 * hash) + REQUESTMETRIC_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRequestMetric());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -688,28 +649,6 @@ public final class HeartBeatOuterClass {
         return space.exploration.communications.protocol.diagnostics.HeartBeatOuterClass.internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 4:
-            return internalGetEquipmentHealth();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 4:
-            return internalGetMutableEquipmentHealth();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return space.exploration.communications.protocol.diagnostics.HeartBeatOuterClass.internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_fieldAccessorTable
@@ -730,6 +669,7 @@ public final class HeartBeatOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getEquipmentHealthFieldBuilder();
         }
       }
       public Builder clear() {
@@ -740,7 +680,12 @@ public final class HeartBeatOuterClass {
 
         solNumber_ = 0;
 
-        internalGetMutableEquipmentHealth().clear();
+        if (equipmentHealthBuilder_ == null) {
+          equipmentHealth_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          equipmentHealthBuilder_.clear();
+        }
         batteryLevel_ = 0;
 
         moduleReporting_ = 0;
@@ -755,6 +700,8 @@ public final class HeartBeatOuterClass {
           location_ = null;
           locationBuilder_ = null;
         }
+        requestMetric_ = 0L;
+
         return this;
       }
 
@@ -782,8 +729,15 @@ public final class HeartBeatOuterClass {
         result.sCET_ = sCET_;
         result.ert_ = ert_;
         result.solNumber_ = solNumber_;
-        result.equipmentHealth_ = internalGetEquipmentHealth();
-        result.equipmentHealth_.makeImmutable();
+        if (equipmentHealthBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            equipmentHealth_ = java.util.Collections.unmodifiableList(equipmentHealth_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.equipmentHealth_ = equipmentHealth_;
+        } else {
+          result.equipmentHealth_ = equipmentHealthBuilder_.build();
+        }
         result.batteryLevel_ = batteryLevel_;
         result.moduleReporting_ = moduleReporting_;
         result.notes_ = notes_;
@@ -793,6 +747,7 @@ public final class HeartBeatOuterClass {
         } else {
           result.location_ = locationBuilder_.build();
         }
+        result.requestMetric_ = requestMetric_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -844,8 +799,32 @@ public final class HeartBeatOuterClass {
         if (other.getSolNumber() != 0) {
           setSolNumber(other.getSolNumber());
         }
-        internalGetMutableEquipmentHealth().mergeFrom(
-            other.internalGetEquipmentHealth());
+        if (equipmentHealthBuilder_ == null) {
+          if (!other.equipmentHealth_.isEmpty()) {
+            if (equipmentHealth_.isEmpty()) {
+              equipmentHealth_ = other.equipmentHealth_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureEquipmentHealthIsMutable();
+              equipmentHealth_.addAll(other.equipmentHealth_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.equipmentHealth_.isEmpty()) {
+            if (equipmentHealthBuilder_.isEmpty()) {
+              equipmentHealthBuilder_.dispose();
+              equipmentHealthBuilder_ = null;
+              equipmentHealth_ = other.equipmentHealth_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              equipmentHealthBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEquipmentHealthFieldBuilder() : null;
+            } else {
+              equipmentHealthBuilder_.addAllMessages(other.equipmentHealth_);
+            }
+          }
+        }
         if (other.getBatteryLevel() != 0) {
           setBatteryLevel(other.getBatteryLevel());
         }
@@ -861,6 +840,9 @@ public final class HeartBeatOuterClass {
         }
         if (other.hasLocation()) {
           mergeLocation(other.getLocation());
+        }
+        if (other.getRequestMetric() != 0L) {
+          setRequestMetric(other.getRequestMetric());
         }
         onChanged();
         return this;
@@ -967,127 +949,244 @@ public final class HeartBeatOuterClass {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.Long> equipmentHealth_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
-      internalGetEquipmentHealth() {
-        if (equipmentHealth_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              EquipmentHealthDefaultEntryHolder.defaultEntry);
-        }
-        return equipmentHealth_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
-      internalGetMutableEquipmentHealth() {
-        onChanged();;
-        if (equipmentHealth_ == null) {
-          equipmentHealth_ = com.google.protobuf.MapField.newMapField(
-              EquipmentHealthDefaultEntryHolder.defaultEntry);
-        }
-        if (!equipmentHealth_.isMutable()) {
-          equipmentHealth_ = equipmentHealth_.copy();
-        }
-        return equipmentHealth_;
+      private java.util.List<space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth> equipmentHealth_ =
+        java.util.Collections.emptyList();
+      private void ensureEquipmentHealthIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          equipmentHealth_ = new java.util.ArrayList<space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth>(equipmentHealth_);
+          bitField0_ |= 0x00000008;
+         }
       }
 
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealthOrBuilder> equipmentHealthBuilder_;
+
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public java.util.List<space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth> getEquipmentHealthList() {
+        if (equipmentHealthBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(equipmentHealth_);
+        } else {
+          return equipmentHealthBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
       public int getEquipmentHealthCount() {
-        return internalGetEquipmentHealth().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-       */
-
-      public boolean containsEquipmentHealth(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetEquipmentHealth().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getEquipmentHealthMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.Long> getEquipmentHealth() {
-        return getEquipmentHealthMap();
-      }
-      /**
-       * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.Long> getEquipmentHealthMap() {
-        return internalGetEquipmentHealth().getMap();
-      }
-      /**
-       * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-       */
-
-      public long getEquipmentHealthOrDefault(
-          java.lang.String key,
-          long defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.Long> map =
-            internalGetEquipmentHealth().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
-       */
-
-      public long getEquipmentHealthOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.Long> map =
-            internalGetEquipmentHealth().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+        if (equipmentHealthBuilder_ == null) {
+          return equipmentHealth_.size();
+        } else {
+          return equipmentHealthBuilder_.getCount();
         }
-        return map.get(key);
       }
-
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth getEquipmentHealth(int index) {
+        if (equipmentHealthBuilder_ == null) {
+          return equipmentHealth_.get(index);
+        } else {
+          return equipmentHealthBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public Builder setEquipmentHealth(
+          int index, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth value) {
+        if (equipmentHealthBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEquipmentHealthIsMutable();
+          equipmentHealth_.set(index, value);
+          onChanged();
+        } else {
+          equipmentHealthBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public Builder setEquipmentHealth(
+          int index, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder builderForValue) {
+        if (equipmentHealthBuilder_ == null) {
+          ensureEquipmentHealthIsMutable();
+          equipmentHealth_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          equipmentHealthBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public Builder addEquipmentHealth(space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth value) {
+        if (equipmentHealthBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEquipmentHealthIsMutable();
+          equipmentHealth_.add(value);
+          onChanged();
+        } else {
+          equipmentHealthBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public Builder addEquipmentHealth(
+          int index, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth value) {
+        if (equipmentHealthBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEquipmentHealthIsMutable();
+          equipmentHealth_.add(index, value);
+          onChanged();
+        } else {
+          equipmentHealthBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public Builder addEquipmentHealth(
+          space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder builderForValue) {
+        if (equipmentHealthBuilder_ == null) {
+          ensureEquipmentHealthIsMutable();
+          equipmentHealth_.add(builderForValue.build());
+          onChanged();
+        } else {
+          equipmentHealthBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public Builder addEquipmentHealth(
+          int index, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder builderForValue) {
+        if (equipmentHealthBuilder_ == null) {
+          ensureEquipmentHealthIsMutable();
+          equipmentHealth_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          equipmentHealthBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public Builder addAllEquipmentHealth(
+          java.lang.Iterable<? extends space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth> values) {
+        if (equipmentHealthBuilder_ == null) {
+          ensureEquipmentHealthIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, equipmentHealth_);
+          onChanged();
+        } else {
+          equipmentHealthBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
       public Builder clearEquipmentHealth() {
-        internalGetMutableEquipmentHealth().getMutableMap()
-            .clear();
+        if (equipmentHealthBuilder_ == null) {
+          equipmentHealth_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          equipmentHealthBuilder_.clear();
+        }
         return this;
       }
       /**
-       * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
        */
-
-      public Builder removeEquipmentHealth(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableEquipmentHealth().getMutableMap()
-            .remove(key);
+      public Builder removeEquipmentHealth(int index) {
+        if (equipmentHealthBuilder_ == null) {
+          ensureEquipmentHealthIsMutable();
+          equipmentHealth_.remove(index);
+          onChanged();
+        } else {
+          equipmentHealthBuilder_.remove(index);
+        }
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.Long>
-      getMutableEquipmentHealth() {
-        return internalGetMutableEquipmentHealth().getMutableMap();
+      public space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder getEquipmentHealthBuilder(
+          int index) {
+        return getEquipmentHealthFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
        */
-      public Builder putEquipmentHealth(
-          java.lang.String key,
-          long value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        
-        internalGetMutableEquipmentHealth().getMutableMap()
-            .put(key, value);
-        return this;
+      public space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealthOrBuilder getEquipmentHealthOrBuilder(
+          int index) {
+        if (equipmentHealthBuilder_ == null) {
+          return equipmentHealth_.get(index);  } else {
+          return equipmentHealthBuilder_.getMessageOrBuilder(index);
+        }
       }
       /**
-       * <code>map&lt;string, int64&gt; equipmentHealth = 4;</code>
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
        */
-
-      public Builder putAllEquipmentHealth(
-          java.util.Map<java.lang.String, java.lang.Long> values) {
-        internalGetMutableEquipmentHealth().getMutableMap()
-            .putAll(values);
-        return this;
+      public java.util.List<? extends space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealthOrBuilder> 
+           getEquipmentHealthOrBuilderList() {
+        if (equipmentHealthBuilder_ != null) {
+          return equipmentHealthBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(equipmentHealth_);
+        }
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder addEquipmentHealthBuilder() {
+        return getEquipmentHealthFieldBuilder().addBuilder(
+            space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder addEquipmentHealthBuilder(
+          int index) {
+        return getEquipmentHealthFieldBuilder().addBuilder(
+            index, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .space.exploration.communications.protocol.kernel.EquipmentHealth equipmentHealth = 4;</code>
+       */
+      public java.util.List<space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder> 
+           getEquipmentHealthBuilderList() {
+        return getEquipmentHealthFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealthOrBuilder> 
+          getEquipmentHealthFieldBuilder() {
+        if (equipmentHealthBuilder_ == null) {
+          equipmentHealthBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealth.Builder, space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.EquipmentHealthOrBuilder>(
+                  equipmentHealth_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          equipmentHealth_ = null;
+        }
+        return equipmentHealthBuilder_;
       }
 
       private int batteryLevel_ ;
@@ -1356,6 +1455,32 @@ public final class HeartBeatOuterClass {
         }
         return locationBuilder_;
       }
+
+      private long requestMetric_ ;
+      /**
+       * <code>int64 requestMetric = 10;</code>
+       */
+      public long getRequestMetric() {
+        return requestMetric_;
+      }
+      /**
+       * <code>int64 requestMetric = 10;</code>
+       */
+      public Builder setRequestMetric(long value) {
+        
+        requestMetric_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 requestMetric = 10;</code>
+       */
+      public Builder clearRequestMetric() {
+        
+        requestMetric_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1410,11 +1535,6 @@ public final class HeartBeatOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_EquipmentHealthEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_EquipmentHealthEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1426,17 +1546,17 @@ public final class HeartBeatOuterClass {
     java.lang.String[] descriptorData = {
       "\n\017HeartBeat.proto\0225space.exploration.com" +
       "munications.protocol.diagnostics\032\021RoverS" +
-      "tatus.proto\"\234\003\n\tHeartBeat\022\014\n\004SCET\030\001 \001(\003\022" +
-      "\013\n\003ert\030\002 \001(\003\022\021\n\tsolNumber\030\003 \001(\005\022n\n\017equip" +
-      "mentHealth\030\004 \003(\0132U.space.exploration.com" +
-      "munications.protocol.diagnostics.HeartBe" +
-      "at.EquipmentHealthEntry\022\024\n\014batteryLevel\030" +
-      "\005 \001(\005\022\027\n\017moduleReporting\030\006 \001(\005\022\r\n\005notes\030" +
-      "\007 \001(\t\022\032\n\022diagnosticsMessage\030\010 \001(\014\022_\n\010loc" +
-      "ation\030\t \001(\0132M.space.exploration.communic",
-      "ations.protocol.communication.RoverStatu" +
-      "s.Location\0326\n\024EquipmentHealthEntry\022\013\n\003ke" +
-      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001b\006proto3"
+      "tatus.proto\032\025EquipmentHealth.proto\"\347\002\n\tH" +
+      "eartBeat\022\014\n\004SCET\030\001 \001(\003\022\013\n\003ert\030\002 \001(\003\022\021\n\ts" +
+      "olNumber\030\003 \001(\005\022Z\n\017equipmentHealth\030\004 \003(\0132" +
+      "A.space.exploration.communications.proto" +
+      "col.kernel.EquipmentHealth\022\024\n\014batteryLev" +
+      "el\030\005 \001(\005\022\027\n\017moduleReporting\030\006 \001(\005\022\r\n\005not" +
+      "es\030\007 \001(\t\022\032\n\022diagnosticsMessage\030\010 \001(\014\022_\n\010" +
+      "location\030\t \001(\0132M.space.exploration.commu",
+      "nications.protocol.communication.RoverSt" +
+      "atus.Location\022\025\n\rrequestMetric\030\n \001(\003b\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1450,20 +1570,16 @@ public final class HeartBeatOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           space.exploration.communications.protocol.communication.RoverStatusOuterClass.getDescriptor(),
+          space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.getDescriptor(),
         }, assigner);
     internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_descriptor,
-        new java.lang.String[] { "SCET", "Ert", "SolNumber", "EquipmentHealth", "BatteryLevel", "ModuleReporting", "Notes", "DiagnosticsMessage", "Location", });
-    internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_EquipmentHealthEntry_descriptor =
-      internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_descriptor.getNestedTypes().get(0);
-    internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_EquipmentHealthEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_space_exploration_communications_protocol_diagnostics_HeartBeat_EquipmentHealthEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "SCET", "Ert", "SolNumber", "EquipmentHealth", "BatteryLevel", "ModuleReporting", "Notes", "DiagnosticsMessage", "Location", "RequestMetric", });
     space.exploration.communications.protocol.communication.RoverStatusOuterClass.getDescriptor();
+    space.exploration.communications.protocol.kernel.EquipmentHealthOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
