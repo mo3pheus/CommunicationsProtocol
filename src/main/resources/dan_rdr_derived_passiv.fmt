@@ -1,0 +1,126 @@
+OBJECT = COLUMN
+   COLUMN_NUMBER = 1
+   NAME = DAN_TIME
+   DATA_TYPE = MSB_UNSIGNED_INTEGER
+   BYTES = 4
+   START_BYTE = 1
+   DESCRIPTION = "DAN instrument time in milliseconds since last 
+                  power up."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 2
+   NAME = UTC_TIMESTAMP
+   DATA_TYPE = CHARACTER
+   BYTES = 23
+   START_BYTE = 5
+   DESCRIPTION = "UTC time at the start of the collection interval,
+   stored as yyyy-mm-ddThh:mm:ss.sss."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 3
+   NAME = BEGIN_LATITUDE
+   DATA_TYPE = IEEE_REAL
+   BYTES = 4
+   START_BYTE = 28
+   UNIT = DEGREE
+   DESCRIPTION = "Latitude in Mars fixed coordinates at the beginning
+   of the frame, in degrees."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 4
+   NAME = BEGIN_LONGITUDE
+   DATA_TYPE = IEEE_REAL
+   BYTES = 4
+   START_BYTE = 32
+   UNIT = DEGREE
+   DESCRIPTION = "Easting Longitude in Mars fixed coordinates at the beginning
+   of the frame, in degrees."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 5
+   NAME = END_LATITUDE
+   DATA_TYPE = IEEE_REAL
+   BYTES = 4
+   START_BYTE = 36
+   UNIT = DEGREE
+   DESCRIPTION = "Latitude in Mars fixed coordinates at the end
+   of the frame, in degrees."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 6
+   NAME = END_LONGITUDE
+   DATA_TYPE = IEEE_REAL
+   BYTES = 4
+   START_BYTE = 40
+   UNIT = DEGREE
+   DESCRIPTION = "Easting Longitude in Mars fixed coordinates at the end
+   of the frame, in degrees."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 7
+   NAME = COLLECTION_DURATION
+   DATA_TYPE = IEEE_REAL
+   BYTES = 4
+   START_BYTE = 44
+   UNIT = SECOND
+   DESCRIPTION = "Value of collection time register, length of time
+   in seconds."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 8
+   NAME = CTN_BKGD
+   DATA_TYPE = IEEE_REAL
+   BYTES = 4
+   START_BYTE = 48
+   UNIT = COUNT
+   DESCRIPTION = "Background counts for CTN detector (counts)."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 9
+   NAME = CTN_COUNTS
+   DATA_TYPE = IEEE_REAL
+   BYTES = 4
+   START_BYTE = 52
+   UNIT = COUNT
+   DESCRIPTION = "Sum of Counts gathered in CTN detector during frame
+   interval."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 10
+   NAME = CETN_BKGD
+   DATA_TYPE = IEEE_REAL
+   BYTES = 4
+   START_BYTE = 56
+   UNIT = COUNT
+   DESCRIPTION = "Background counts for CETN detector (counts)."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   COLUMN_NUMBER = 11
+   NAME = CETN_COUNTS
+   DATA_TYPE = IEEE_REAL
+   BYTES = 4
+   START_BYTE = 60
+   UNIT = COUNT
+   DESCRIPTION = "Sum of Counts gathered in CETN detector during frame
+   interval."
+END_OBJECT = COLUMN
+
+OBJECT = COLUMN
+   NAME = LST
+   COLUMN_NUMBER = 12
+   BYTES = 8
+   DATA_TYPE = CHARACTER
+   START_BYTE = 64
+   DESCRIPTION = "Local solar time at start of period, 'hh:mm:ss'."
+END_OBJECT = COLUMN
+
