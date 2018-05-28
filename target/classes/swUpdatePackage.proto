@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package space.exploration.communications.protocol.softwareUpdate;
+
+message SwUpdatePackage {
+    double version = 1;
+    bytes jarFile = 2;
+    string jarFileName = 3;
+}
+
