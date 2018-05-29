@@ -30,6 +30,8 @@ public class ModuleDirectory {
         }
     }
 
-    public static final String SCLK_COMMAND = "GetSclkInformation";
-    public static final String SCLK_SYNC    = "SynchronizeClock";
+    public static final String SCLK_COMMAND      = "GetSclkInformation";
+    public static final String SCLK_SYNC         = "SynchronizeClock";
+    public static final String GRACEFUL_SHUTDOWN = "Graceful Shutdown.";
+    public static final String SOFTWARE_UPDATE   = "Update Software";
 }

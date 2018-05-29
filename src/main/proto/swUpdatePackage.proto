@@ -4,7 +4,9 @@ package space.exploration.communications.protocol.softwareUpdate;
 
 message SwUpdatePackage {
     double version = 1;
-    bytes jarFile = 2;
-    string jarFileName = 3;
+    string jarFileLocation = 2;
+    string launchScriptLocation = 3;
+    string jarFileName = 4;
+    string scriptFileName = 5;
 }
 

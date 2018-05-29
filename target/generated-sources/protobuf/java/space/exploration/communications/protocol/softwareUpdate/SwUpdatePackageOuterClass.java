@@ -24,19 +24,44 @@ public final class SwUpdatePackageOuterClass {
     double getVersion();
 
     /**
-     * <code>bytes jarFile = 2;</code>
+     * <code>string jarFileLocation = 2;</code>
      */
-    com.google.protobuf.ByteString getJarFile();
+    java.lang.String getJarFileLocation();
+    /**
+     * <code>string jarFileLocation = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getJarFileLocationBytes();
 
     /**
-     * <code>string jarFileName = 3;</code>
+     * <code>string launchScriptLocation = 3;</code>
+     */
+    java.lang.String getLaunchScriptLocation();
+    /**
+     * <code>string launchScriptLocation = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getLaunchScriptLocationBytes();
+
+    /**
+     * <code>string jarFileName = 4;</code>
      */
     java.lang.String getJarFileName();
     /**
-     * <code>string jarFileName = 3;</code>
+     * <code>string jarFileName = 4;</code>
      */
     com.google.protobuf.ByteString
         getJarFileNameBytes();
+
+    /**
+     * <code>string scriptFileName = 5;</code>
+     */
+    java.lang.String getScriptFileName();
+    /**
+     * <code>string scriptFileName = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getScriptFileNameBytes();
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.softwareUpdate.SwUpdatePackage}
@@ -51,8 +76,10 @@ public final class SwUpdatePackageOuterClass {
     }
     private SwUpdatePackage() {
       version_ = 0D;
-      jarFile_ = com.google.protobuf.ByteString.EMPTY;
+      jarFileLocation_ = "";
+      launchScriptLocation_ = "";
       jarFileName_ = "";
+      scriptFileName_ = "";
     }
 
     @java.lang.Override
@@ -86,14 +113,27 @@ public final class SwUpdatePackageOuterClass {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              jarFile_ = input.readBytes();
+              jarFileLocation_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              launchScriptLocation_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               jarFileName_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              scriptFileName_ = s;
               break;
             }
           }
@@ -128,19 +168,78 @@ public final class SwUpdatePackageOuterClass {
       return version_;
     }
 
-    public static final int JARFILE_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString jarFile_;
+    public static final int JARFILELOCATION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object jarFileLocation_;
     /**
-     * <code>bytes jarFile = 2;</code>
+     * <code>string jarFileLocation = 2;</code>
      */
-    public com.google.protobuf.ByteString getJarFile() {
-      return jarFile_;
+    public java.lang.String getJarFileLocation() {
+      java.lang.Object ref = jarFileLocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jarFileLocation_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string jarFileLocation = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getJarFileLocationBytes() {
+      java.lang.Object ref = jarFileLocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jarFileLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int JARFILENAME_FIELD_NUMBER = 3;
+    public static final int LAUNCHSCRIPTLOCATION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object launchScriptLocation_;
+    /**
+     * <code>string launchScriptLocation = 3;</code>
+     */
+    public java.lang.String getLaunchScriptLocation() {
+      java.lang.Object ref = launchScriptLocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        launchScriptLocation_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string launchScriptLocation = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLaunchScriptLocationBytes() {
+      java.lang.Object ref = launchScriptLocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        launchScriptLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JARFILENAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object jarFileName_;
     /**
-     * <code>string jarFileName = 3;</code>
+     * <code>string jarFileName = 4;</code>
      */
     public java.lang.String getJarFileName() {
       java.lang.Object ref = jarFileName_;
@@ -155,7 +254,7 @@ public final class SwUpdatePackageOuterClass {
       }
     }
     /**
-     * <code>string jarFileName = 3;</code>
+     * <code>string jarFileName = 4;</code>
      */
     public com.google.protobuf.ByteString
         getJarFileNameBytes() {
@@ -165,6 +264,40 @@ public final class SwUpdatePackageOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         jarFileName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCRIPTFILENAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object scriptFileName_;
+    /**
+     * <code>string scriptFileName = 5;</code>
+     */
+    public java.lang.String getScriptFileName() {
+      java.lang.Object ref = scriptFileName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        scriptFileName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string scriptFileName = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getScriptFileNameBytes() {
+      java.lang.Object ref = scriptFileName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        scriptFileName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -186,11 +319,17 @@ public final class SwUpdatePackageOuterClass {
       if (version_ != 0D) {
         output.writeDouble(1, version_);
       }
-      if (!jarFile_.isEmpty()) {
-        output.writeBytes(2, jarFile_);
+      if (!getJarFileLocationBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jarFileLocation_);
+      }
+      if (!getLaunchScriptLocationBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, launchScriptLocation_);
       }
       if (!getJarFileNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jarFileName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, jarFileName_);
+      }
+      if (!getScriptFileNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, scriptFileName_);
       }
     }
 
@@ -203,12 +342,17 @@ public final class SwUpdatePackageOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, version_);
       }
-      if (!jarFile_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, jarFile_);
+      if (!getJarFileLocationBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jarFileLocation_);
+      }
+      if (!getLaunchScriptLocationBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, launchScriptLocation_);
       }
       if (!getJarFileNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jarFileName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, jarFileName_);
+      }
+      if (!getScriptFileNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, scriptFileName_);
       }
       memoizedSize = size;
       return size;
@@ -230,10 +374,14 @@ public final class SwUpdatePackageOuterClass {
           java.lang.Double.doubleToLongBits(getVersion())
           == java.lang.Double.doubleToLongBits(
               other.getVersion()));
-      result = result && getJarFile()
-          .equals(other.getJarFile());
+      result = result && getJarFileLocation()
+          .equals(other.getJarFileLocation());
+      result = result && getLaunchScriptLocation()
+          .equals(other.getLaunchScriptLocation());
       result = result && getJarFileName()
           .equals(other.getJarFileName());
+      result = result && getScriptFileName()
+          .equals(other.getScriptFileName());
       return result;
     }
 
@@ -247,10 +395,14 @@ public final class SwUpdatePackageOuterClass {
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getVersion()));
-      hash = (37 * hash) + JARFILE_FIELD_NUMBER;
-      hash = (53 * hash) + getJarFile().hashCode();
+      hash = (37 * hash) + JARFILELOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getJarFileLocation().hashCode();
+      hash = (37 * hash) + LAUNCHSCRIPTLOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLaunchScriptLocation().hashCode();
       hash = (37 * hash) + JARFILENAME_FIELD_NUMBER;
       hash = (53 * hash) + getJarFileName().hashCode();
+      hash = (37 * hash) + SCRIPTFILENAME_FIELD_NUMBER;
+      hash = (53 * hash) + getScriptFileName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -371,9 +523,13 @@ public final class SwUpdatePackageOuterClass {
         super.clear();
         version_ = 0D;
 
-        jarFile_ = com.google.protobuf.ByteString.EMPTY;
+        jarFileLocation_ = "";
+
+        launchScriptLocation_ = "";
 
         jarFileName_ = "";
+
+        scriptFileName_ = "";
 
         return this;
       }
@@ -398,8 +554,10 @@ public final class SwUpdatePackageOuterClass {
       public space.exploration.communications.protocol.softwareUpdate.SwUpdatePackageOuterClass.SwUpdatePackage buildPartial() {
         space.exploration.communications.protocol.softwareUpdate.SwUpdatePackageOuterClass.SwUpdatePackage result = new space.exploration.communications.protocol.softwareUpdate.SwUpdatePackageOuterClass.SwUpdatePackage(this);
         result.version_ = version_;
-        result.jarFile_ = jarFile_;
+        result.jarFileLocation_ = jarFileLocation_;
+        result.launchScriptLocation_ = launchScriptLocation_;
         result.jarFileName_ = jarFileName_;
+        result.scriptFileName_ = scriptFileName_;
         onBuilt();
         return result;
       }
@@ -444,11 +602,20 @@ public final class SwUpdatePackageOuterClass {
         if (other.getVersion() != 0D) {
           setVersion(other.getVersion());
         }
-        if (other.getJarFile() != com.google.protobuf.ByteString.EMPTY) {
-          setJarFile(other.getJarFile());
+        if (!other.getJarFileLocation().isEmpty()) {
+          jarFileLocation_ = other.jarFileLocation_;
+          onChanged();
+        }
+        if (!other.getLaunchScriptLocation().isEmpty()) {
+          launchScriptLocation_ = other.launchScriptLocation_;
+          onChanged();
         }
         if (!other.getJarFileName().isEmpty()) {
           jarFileName_ = other.jarFileName_;
+          onChanged();
+        }
+        if (!other.getScriptFileName().isEmpty()) {
+          scriptFileName_ = other.scriptFileName_;
           onChanged();
         }
         onChanged();
@@ -503,38 +670,147 @@ public final class SwUpdatePackageOuterClass {
         return this;
       }
 
-      private com.google.protobuf.ByteString jarFile_ = com.google.protobuf.ByteString.EMPTY;
+      private java.lang.Object jarFileLocation_ = "";
       /**
-       * <code>bytes jarFile = 2;</code>
+       * <code>string jarFileLocation = 2;</code>
        */
-      public com.google.protobuf.ByteString getJarFile() {
-        return jarFile_;
+      public java.lang.String getJarFileLocation() {
+        java.lang.Object ref = jarFileLocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jarFileLocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>bytes jarFile = 2;</code>
+       * <code>string jarFileLocation = 2;</code>
        */
-      public Builder setJarFile(com.google.protobuf.ByteString value) {
+      public com.google.protobuf.ByteString
+          getJarFileLocationBytes() {
+        java.lang.Object ref = jarFileLocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jarFileLocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string jarFileLocation = 2;</code>
+       */
+      public Builder setJarFileLocation(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        jarFile_ = value;
+        jarFileLocation_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes jarFile = 2;</code>
+       * <code>string jarFileLocation = 2;</code>
        */
-      public Builder clearJarFile() {
+      public Builder clearJarFileLocation() {
         
-        jarFile_ = getDefaultInstance().getJarFile();
+        jarFileLocation_ = getDefaultInstance().getJarFileLocation();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string jarFileLocation = 2;</code>
+       */
+      public Builder setJarFileLocationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        jarFileLocation_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object launchScriptLocation_ = "";
+      /**
+       * <code>string launchScriptLocation = 3;</code>
+       */
+      public java.lang.String getLaunchScriptLocation() {
+        java.lang.Object ref = launchScriptLocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          launchScriptLocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string launchScriptLocation = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLaunchScriptLocationBytes() {
+        java.lang.Object ref = launchScriptLocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          launchScriptLocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string launchScriptLocation = 3;</code>
+       */
+      public Builder setLaunchScriptLocation(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        launchScriptLocation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string launchScriptLocation = 3;</code>
+       */
+      public Builder clearLaunchScriptLocation() {
+        
+        launchScriptLocation_ = getDefaultInstance().getLaunchScriptLocation();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string launchScriptLocation = 3;</code>
+       */
+      public Builder setLaunchScriptLocationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        launchScriptLocation_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object jarFileName_ = "";
       /**
-       * <code>string jarFileName = 3;</code>
+       * <code>string jarFileName = 4;</code>
        */
       public java.lang.String getJarFileName() {
         java.lang.Object ref = jarFileName_;
@@ -549,7 +825,7 @@ public final class SwUpdatePackageOuterClass {
         }
       }
       /**
-       * <code>string jarFileName = 3;</code>
+       * <code>string jarFileName = 4;</code>
        */
       public com.google.protobuf.ByteString
           getJarFileNameBytes() {
@@ -565,7 +841,7 @@ public final class SwUpdatePackageOuterClass {
         }
       }
       /**
-       * <code>string jarFileName = 3;</code>
+       * <code>string jarFileName = 4;</code>
        */
       public Builder setJarFileName(
           java.lang.String value) {
@@ -578,7 +854,7 @@ public final class SwUpdatePackageOuterClass {
         return this;
       }
       /**
-       * <code>string jarFileName = 3;</code>
+       * <code>string jarFileName = 4;</code>
        */
       public Builder clearJarFileName() {
         
@@ -587,7 +863,7 @@ public final class SwUpdatePackageOuterClass {
         return this;
       }
       /**
-       * <code>string jarFileName = 3;</code>
+       * <code>string jarFileName = 4;</code>
        */
       public Builder setJarFileNameBytes(
           com.google.protobuf.ByteString value) {
@@ -597,6 +873,75 @@ public final class SwUpdatePackageOuterClass {
   checkByteStringIsUtf8(value);
         
         jarFileName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object scriptFileName_ = "";
+      /**
+       * <code>string scriptFileName = 5;</code>
+       */
+      public java.lang.String getScriptFileName() {
+        java.lang.Object ref = scriptFileName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          scriptFileName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string scriptFileName = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getScriptFileNameBytes() {
+        java.lang.Object ref = scriptFileName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          scriptFileName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string scriptFileName = 5;</code>
+       */
+      public Builder setScriptFileName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        scriptFileName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string scriptFileName = 5;</code>
+       */
+      public Builder clearScriptFileName() {
+        
+        scriptFileName_ = getDefaultInstance().getScriptFileName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string scriptFileName = 5;</code>
+       */
+      public Builder setScriptFileNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        scriptFileName_ = value;
         onChanged();
         return this;
       }
@@ -665,9 +1010,10 @@ public final class SwUpdatePackageOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025swUpdatePackage.proto\0228space.explorati" +
       "on.communications.protocol.softwareUpdat" +
-      "e\"H\n\017SwUpdatePackage\022\017\n\007version\030\001 \001(\001\022\017\n" +
-      "\007jarFile\030\002 \001(\014\022\023\n\013jarFileName\030\003 \001(\tb\006pro" +
-      "to3"
+      "e\"\206\001\n\017SwUpdatePackage\022\017\n\007version\030\001 \001(\001\022\027" +
+      "\n\017jarFileLocation\030\002 \001(\t\022\034\n\024launchScriptL" +
+      "ocation\030\003 \001(\t\022\023\n\013jarFileName\030\004 \001(\t\022\026\n\016sc" +
+      "riptFileName\030\005 \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -686,7 +1032,7 @@ public final class SwUpdatePackageOuterClass {
     internal_static_space_exploration_communications_protocol_softwareUpdate_SwUpdatePackage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_softwareUpdate_SwUpdatePackage_descriptor,
-        new java.lang.String[] { "Version", "JarFile", "JarFileName", });
+        new java.lang.String[] { "Version", "JarFileLocation", "LaunchScriptLocation", "JarFileName", "ScriptFileName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
