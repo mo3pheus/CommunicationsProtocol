@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package space.exploration.communications.protocol.service;
+
+message DANDerivedData{
+    int64 instrumentTimeMillis = 1;
+    string utcTimeStamp = 2;
+    double beginLatitude = 3;
+    double beginLongitude = 4;
+    double endLatitude = 5;
+    double endLongitude = 6;
+    double collectionDurationSeconds = 7;
+    double ctnBackgroundCounts = 8;
+    double ctnCounts = 9;
+    double cetnBackgroundCounts = 10;
+    double cetnCounts = 11;
+    string localSolarTime = 12;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package shipBob.live.traffic;
+
+message TrafficIncident{
+    int32 xCoordinate = 1;
+    int32 yCoordinate = 2;
+    double severityScore = 3;
+}

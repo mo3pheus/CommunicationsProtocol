@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "DanRDRData.proto";
+
+package space.exploration.communications.protocol.service;
+
+message DanRDRDataSeries{
+    int32 sol = 1;
+    repeated space.exploration.communications.protocol.service.DANDerivedData danData = 2;
+}
