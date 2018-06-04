@@ -1,4 +1,5 @@
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$BoomAirTemp.class
+communications/encryption/KeyPairUtil.class
 space/exploration/communications/protocol/propulsion/TelemetryPacketOuterClass$1.class
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$Humidity.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$PointComp.class
@@ -168,6 +169,7 @@ shipBob/live/traffic/TrafficIncidentOuterClass$TrafficIncident.class
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$1.class
 space/exploration/communications/protocol/communication/MatrixCommunication.class
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$BoomAirTemp$Builder.class
+communications/encryption/EncryptionUtil.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$Builder.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$PointComp$1.class
 space/exploration/communications/protocol/diagnostics/HeartBeatOuterClass$HeartBeatOrBuilder.class
