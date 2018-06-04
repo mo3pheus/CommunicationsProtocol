@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package space.exploration.communications.protocol.security;
+
+message SecureMessagePacket {
+    string senderId = 1;
+    bytes signature = 2;
+    bytes content = 3;
+}

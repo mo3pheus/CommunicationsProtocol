@@ -18,6 +18,7 @@ space/exploration/communications/protocol/service/WeatherData$1.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$1.class
 space/exploration/communications/protocol/kernel/EquipmentHealthOuterClass$EquipmentHealthOrBuilder.class
 space/exploration/communications/protocol/propulsion/TelemetryPacketOuterClass.class
+space/exploration/communications/protocol/security/SecureMessage$1.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$Location$1.class
 space/exploration/communications/protocol/communication/RoverStatusOuterClass$RoverStatus$LocationOrBuilder.class
 space/exploration/communications/protocol/service/CameraPayload$CamPayload$Builder.class
@@ -80,8 +81,10 @@ space/exploration/communications/protocol/InstructionPayloadOuterClass.class
 space/exploration/communications/protocol/service/DanRDRDataSeriesOuterClass.class
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayload$TargetPackage$1.class
 space/exploration/communications/protocol/kernel/EquipmentHealthOuterClass$1.class
+space/exploration/communications/protocol/security/SecureMessage$SecureMessagePacketOrBuilder.class
 communications/protocol/ModuleDirectory.class
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayload.class
+space/exploration/communications/protocol/security/SecureMessage$SecureMessagePacket$Builder.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScanOrBuilder.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$PointCompOrBuilder.class
 space/exploration/mars/rover/sensors/apxs/ApxsData$ApxsDataPacket$Builder.class
@@ -120,6 +123,7 @@ shipBob/live/traffic/TrafficIncidentOuterClass.class
 space/exploration/mars/rover/sensors/apxs/ApxsData$1.class
 space/exploration/communications/protocol/communication/RoverPingOuterClass$RoverPing$Builder.class
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$Humidity$1.class
+space/exploration/communications/protocol/security/SecureMessage$SecureMessagePacket$1.class
 space/exploration/mars/rover/sensors/apxs/ApxsData$ApxsDataPacket.class
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$Humidity$Builder.class
 space/exploration/communications/protocol/spice/MSLRelativePositions$MSLRelPositionsPacket.class
@@ -169,15 +173,16 @@ shipBob/live/traffic/TrafficIncidentOuterClass$TrafficIncident.class
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$1.class
 space/exploration/communications/protocol/communication/MatrixCommunication.class
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$BoomAirTemp$Builder.class
-communications/encryption/EncryptionUtil.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$Builder.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass$SpectrometerScan$PointComp$1.class
 space/exploration/communications/protocol/diagnostics/HeartBeatOuterClass$HeartBeatOrBuilder.class
 space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass.class
 space/exploration/communications/protocol/softwareUpdate/SwUpdatePackageOuterClass$SwUpdatePackageOrBuilder.class
 space/exploration/communications/protocol/communication/MatrixCommunication$1.class
+space/exploration/communications/protocol/security/SecureMessage$SecureMessagePacket.class
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$Pressure$Builder.class
 space/exploration/communications/protocol/InstructionPayloadOuterClass$InstructionPayload$1.class
+space/exploration/communications/protocol/security/SecureMessage.class
 space/exploration/communications/protocol/service/DanRDRDataSeriesOuterClass$DanRDRDataSeriesOrBuilder.class
 space/exploration/communications/protocol/radar/PolarCoord$PolarPointOrBuilder.class
 space/exploration/communications/protocol/service/WeatherRDRData$WeatherEnvReducedData$BoomAirTemp$1.class

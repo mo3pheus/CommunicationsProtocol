@@ -4,6 +4,7 @@
 /home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/protocol/IncidentReportCenter.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/radar/PolarCoord.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/protocol/Transmitter.java
+/home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/security/SecureMessage.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/diagnostics/HeartBeatOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/SeasonalWeather.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass.java
@@ -20,7 +21,6 @@
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/softwareUpdate/SwUpdatePackageOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/kernel/EquipmentHealthOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/protocol/ModuleDirectory.java
-/home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/encryption/EncryptionUtil.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/InstructionPayloadOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/DanRDRData.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/protocol/KafkaConfig.java
