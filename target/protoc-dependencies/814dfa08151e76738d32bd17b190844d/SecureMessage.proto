@@ -5,5 +5,8 @@ package space.exploration.communications.protocol.security;
 message SecureMessagePacket {
     string senderId = 1;
     bytes signature = 2;
-    bytes content = 3;
+    int64 contentLength = 3;
+    bytes checkSum = 4;
+    int64 processingTime = 5;
+    repeated bytes content = 6;
 }
