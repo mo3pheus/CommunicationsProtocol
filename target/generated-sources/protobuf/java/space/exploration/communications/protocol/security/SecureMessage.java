@@ -34,9 +34,32 @@ public final class SecureMessage {
     com.google.protobuf.ByteString getSignature();
 
     /**
-     * <code>bytes content = 3;</code>
+     * <code>int64 contentLength = 3;</code>
      */
-    com.google.protobuf.ByteString getContent();
+    long getContentLength();
+
+    /**
+     * <code>bytes checkSum = 4;</code>
+     */
+    com.google.protobuf.ByteString getCheckSum();
+
+    /**
+     * <code>int64 processingTime = 5;</code>
+     */
+    long getProcessingTime();
+
+    /**
+     * <code>repeated bytes content = 6;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getContentList();
+    /**
+     * <code>repeated bytes content = 6;</code>
+     */
+    int getContentCount();
+    /**
+     * <code>repeated bytes content = 6;</code>
+     */
+    com.google.protobuf.ByteString getContent(int index);
   }
   /**
    * Protobuf type {@code space.exploration.communications.protocol.security.SecureMessagePacket}
@@ -52,7 +75,10 @@ public final class SecureMessage {
     private SecureMessagePacket() {
       senderId_ = "";
       signature_ = com.google.protobuf.ByteString.EMPTY;
-      content_ = com.google.protobuf.ByteString.EMPTY;
+      contentLength_ = 0L;
+      checkSum_ = com.google.protobuf.ByteString.EMPTY;
+      processingTime_ = 0L;
+      content_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -91,9 +117,27 @@ public final class SecureMessage {
               signature_ = input.readBytes();
               break;
             }
-            case 26: {
+            case 24: {
 
-              content_ = input.readBytes();
+              contentLength_ = input.readInt64();
+              break;
+            }
+            case 34: {
+
+              checkSum_ = input.readBytes();
+              break;
+            }
+            case 40: {
+
+              processingTime_ = input.readInt64();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                content_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              content_.add(input.readBytes());
               break;
             }
           }
@@ -104,6 +148,9 @@ public final class SecureMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          content_ = java.util.Collections.unmodifiableList(content_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -119,6 +166,7 @@ public final class SecureMessage {
               space.exploration.communications.protocol.security.SecureMessage.SecureMessagePacket.class, space.exploration.communications.protocol.security.SecureMessage.SecureMessagePacket.Builder.class);
     }
 
+    private int bitField0_;
     public static final int SENDERID_FIELD_NUMBER = 1;
     private volatile java.lang.Object senderId_;
     /**
@@ -162,13 +210,53 @@ public final class SecureMessage {
       return signature_;
     }
 
-    public static final int CONTENT_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString content_;
+    public static final int CONTENTLENGTH_FIELD_NUMBER = 3;
+    private long contentLength_;
     /**
-     * <code>bytes content = 3;</code>
+     * <code>int64 contentLength = 3;</code>
      */
-    public com.google.protobuf.ByteString getContent() {
+    public long getContentLength() {
+      return contentLength_;
+    }
+
+    public static final int CHECKSUM_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString checkSum_;
+    /**
+     * <code>bytes checkSum = 4;</code>
+     */
+    public com.google.protobuf.ByteString getCheckSum() {
+      return checkSum_;
+    }
+
+    public static final int PROCESSINGTIME_FIELD_NUMBER = 5;
+    private long processingTime_;
+    /**
+     * <code>int64 processingTime = 5;</code>
+     */
+    public long getProcessingTime() {
+      return processingTime_;
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 6;
+    private java.util.List<com.google.protobuf.ByteString> content_;
+    /**
+     * <code>repeated bytes content = 6;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getContentList() {
       return content_;
+    }
+    /**
+     * <code>repeated bytes content = 6;</code>
+     */
+    public int getContentCount() {
+      return content_.size();
+    }
+    /**
+     * <code>repeated bytes content = 6;</code>
+     */
+    public com.google.protobuf.ByteString getContent(int index) {
+      return content_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -189,8 +277,17 @@ public final class SecureMessage {
       if (!signature_.isEmpty()) {
         output.writeBytes(2, signature_);
       }
-      if (!content_.isEmpty()) {
-        output.writeBytes(3, content_);
+      if (contentLength_ != 0L) {
+        output.writeInt64(3, contentLength_);
+      }
+      if (!checkSum_.isEmpty()) {
+        output.writeBytes(4, checkSum_);
+      }
+      if (processingTime_ != 0L) {
+        output.writeInt64(5, processingTime_);
+      }
+      for (int i = 0; i < content_.size(); i++) {
+        output.writeBytes(6, content_.get(i));
       }
     }
 
@@ -206,9 +303,26 @@ public final class SecureMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, signature_);
       }
-      if (!content_.isEmpty()) {
+      if (contentLength_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, content_);
+          .computeInt64Size(3, contentLength_);
+      }
+      if (!checkSum_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, checkSum_);
+      }
+      if (processingTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, processingTime_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < content_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(content_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getContentList().size();
       }
       memoizedSize = size;
       return size;
@@ -230,8 +344,14 @@ public final class SecureMessage {
           .equals(other.getSenderId());
       result = result && getSignature()
           .equals(other.getSignature());
-      result = result && getContent()
-          .equals(other.getContent());
+      result = result && (getContentLength()
+          == other.getContentLength());
+      result = result && getCheckSum()
+          .equals(other.getCheckSum());
+      result = result && (getProcessingTime()
+          == other.getProcessingTime());
+      result = result && getContentList()
+          .equals(other.getContentList());
       return result;
     }
 
@@ -246,8 +366,18 @@ public final class SecureMessage {
       hash = (53 * hash) + getSenderId().hashCode();
       hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
       hash = (53 * hash) + getSignature().hashCode();
-      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getContent().hashCode();
+      hash = (37 * hash) + CONTENTLENGTH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getContentLength());
+      hash = (37 * hash) + CHECKSUM_FIELD_NUMBER;
+      hash = (53 * hash) + getCheckSum().hashCode();
+      hash = (37 * hash) + PROCESSINGTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProcessingTime());
+      if (getContentCount() > 0) {
+        hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getContentList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -370,8 +500,14 @@ public final class SecureMessage {
 
         signature_ = com.google.protobuf.ByteString.EMPTY;
 
-        content_ = com.google.protobuf.ByteString.EMPTY;
+        contentLength_ = 0L;
 
+        checkSum_ = com.google.protobuf.ByteString.EMPTY;
+
+        processingTime_ = 0L;
+
+        content_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -394,9 +530,19 @@ public final class SecureMessage {
 
       public space.exploration.communications.protocol.security.SecureMessage.SecureMessagePacket buildPartial() {
         space.exploration.communications.protocol.security.SecureMessage.SecureMessagePacket result = new space.exploration.communications.protocol.security.SecureMessage.SecureMessagePacket(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.senderId_ = senderId_;
         result.signature_ = signature_;
+        result.contentLength_ = contentLength_;
+        result.checkSum_ = checkSum_;
+        result.processingTime_ = processingTime_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          content_ = java.util.Collections.unmodifiableList(content_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
         result.content_ = content_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -445,8 +591,24 @@ public final class SecureMessage {
         if (other.getSignature() != com.google.protobuf.ByteString.EMPTY) {
           setSignature(other.getSignature());
         }
-        if (other.getContent() != com.google.protobuf.ByteString.EMPTY) {
-          setContent(other.getContent());
+        if (other.getContentLength() != 0L) {
+          setContentLength(other.getContentLength());
+        }
+        if (other.getCheckSum() != com.google.protobuf.ByteString.EMPTY) {
+          setCheckSum(other.getCheckSum());
+        }
+        if (other.getProcessingTime() != 0L) {
+          setProcessingTime(other.getProcessingTime());
+        }
+        if (!other.content_.isEmpty()) {
+          if (content_.isEmpty()) {
+            content_ = other.content_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureContentIsMutable();
+            content_.addAll(other.content_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -473,6 +635,7 @@ public final class SecureMessage {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object senderId_ = "";
       /**
@@ -572,31 +735,155 @@ public final class SecureMessage {
         return this;
       }
 
-      private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+      private long contentLength_ ;
       /**
-       * <code>bytes content = 3;</code>
+       * <code>int64 contentLength = 3;</code>
        */
-      public com.google.protobuf.ByteString getContent() {
-        return content_;
+      public long getContentLength() {
+        return contentLength_;
       }
       /**
-       * <code>bytes content = 3;</code>
+       * <code>int64 contentLength = 3;</code>
        */
-      public Builder setContent(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        content_ = value;
+      public Builder setContentLength(long value) {
+        
+        contentLength_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes content = 3;</code>
+       * <code>int64 contentLength = 3;</code>
+       */
+      public Builder clearContentLength() {
+        
+        contentLength_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString checkSum_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes checkSum = 4;</code>
+       */
+      public com.google.protobuf.ByteString getCheckSum() {
+        return checkSum_;
+      }
+      /**
+       * <code>bytes checkSum = 4;</code>
+       */
+      public Builder setCheckSum(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        checkSum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes checkSum = 4;</code>
+       */
+      public Builder clearCheckSum() {
+        
+        checkSum_ = getDefaultInstance().getCheckSum();
+        onChanged();
+        return this;
+      }
+
+      private long processingTime_ ;
+      /**
+       * <code>int64 processingTime = 5;</code>
+       */
+      public long getProcessingTime() {
+        return processingTime_;
+      }
+      /**
+       * <code>int64 processingTime = 5;</code>
+       */
+      public Builder setProcessingTime(long value) {
+        
+        processingTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 processingTime = 5;</code>
+       */
+      public Builder clearProcessingTime() {
+        
+        processingTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.protobuf.ByteString> content_ = java.util.Collections.emptyList();
+      private void ensureContentIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          content_ = new java.util.ArrayList<com.google.protobuf.ByteString>(content_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated bytes content = 6;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getContentList() {
+        return java.util.Collections.unmodifiableList(content_);
+      }
+      /**
+       * <code>repeated bytes content = 6;</code>
+       */
+      public int getContentCount() {
+        return content_.size();
+      }
+      /**
+       * <code>repeated bytes content = 6;</code>
+       */
+      public com.google.protobuf.ByteString getContent(int index) {
+        return content_.get(index);
+      }
+      /**
+       * <code>repeated bytes content = 6;</code>
+       */
+      public Builder setContent(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureContentIsMutable();
+        content_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes content = 6;</code>
+       */
+      public Builder addContent(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureContentIsMutable();
+        content_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes content = 6;</code>
+       */
+      public Builder addAllContent(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureContentIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, content_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes content = 6;</code>
        */
       public Builder clearContent() {
-        
-        content_ = getDefaultInstance().getContent();
+        content_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -664,9 +951,11 @@ public final class SecureMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\023SecureMessage.proto\0222space.exploration" +
-      ".communications.protocol.security\"K\n\023Sec" +
-      "ureMessagePacket\022\020\n\010senderId\030\001 \001(\t\022\021\n\tsi" +
-      "gnature\030\002 \001(\014\022\017\n\007content\030\003 \001(\014b\006proto3"
+      ".communications.protocol.security\"\214\001\n\023Se" +
+      "cureMessagePacket\022\020\n\010senderId\030\001 \001(\t\022\021\n\ts" +
+      "ignature\030\002 \001(\014\022\025\n\rcontentLength\030\003 \001(\003\022\020\n" +
+      "\010checkSum\030\004 \001(\014\022\026\n\016processingTime\030\005 \001(\003\022" +
+      "\017\n\007content\030\006 \003(\014b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -685,7 +974,7 @@ public final class SecureMessage {
     internal_static_space_exploration_communications_protocol_security_SecureMessagePacket_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_space_exploration_communications_protocol_security_SecureMessagePacket_descriptor,
-        new java.lang.String[] { "SenderId", "Signature", "Content", });
+        new java.lang.String[] { "SenderId", "Signature", "ContentLength", "CheckSum", "ProcessingTime", "Content", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
