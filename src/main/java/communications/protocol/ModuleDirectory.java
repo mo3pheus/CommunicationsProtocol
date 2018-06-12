@@ -34,4 +34,5 @@ public class ModuleDirectory {
     public static final String SCLK_SYNC         = "SynchronizeClock";
     public static final String GRACEFUL_SHUTDOWN = "Graceful Shutdown.";
     public static final String SOFTWARE_UPDATE   = "Update Software";
+    public static final String REQUEST_LOGS      = "Request Rover Logs";
 }
