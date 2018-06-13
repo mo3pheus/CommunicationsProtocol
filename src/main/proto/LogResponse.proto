@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package space.exploration.kernel.diagnostics;
+
+message LogResponsePacket {
+    string startDate = 2;
+    string endDate = 3;
+    repeated LogFile logFiles = 4;
+
+    message LogFile {
+        string filename = 1;
+        string content = 2;
+    }
+}
