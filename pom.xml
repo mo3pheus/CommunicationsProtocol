@@ -6,7 +6,7 @@
 
     <groupId>space.exploration</groupId>
     <artifactId>communications.protocol</artifactId>
-    <version>1.5</version>
+    <version>1.5.1</version>
 
     <properties>
         <junit.output.dir>output</junit.output.dir>

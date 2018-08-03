@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package space.exploration.communications.protocol.kernel;
-
-message EquipmentHealth {
-    string equipmentName = 1;
-    int64 lifeSpan = 2;
-    int64 requestCount = 3;
-}

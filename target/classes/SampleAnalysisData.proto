@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package space.exploration.communications.protocol.service;
+
+message SampleAnalysisData {
+    int32 sol = 1;
+    bool getNearest = 2;
+}

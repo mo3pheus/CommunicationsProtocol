@@ -1,10 +1,13 @@
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/communication/MatrixCommunication.java
+/home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/SamQueryOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/radar/RadarContactListOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/shipBob/live/traffic/TrafficIncidentOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/protocol/IncidentReportCenter.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/radar/PolarCoord.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/protocol/Transmitter.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/security/SecureMessage.java
+/home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/kernel/diagnostics/LogRequest.java
+/home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/SampleAnalysisDataOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/diagnostics/HeartBeatOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/SeasonalWeather.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/spectrometer/SpectrometerScanOuterClass.java
@@ -24,6 +27,7 @@
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/InstructionPayloadOuterClass.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/DanRDRData.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/protocol/KafkaConfig.java
+/home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/kernel/diagnostics/LogResponse.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/WeatherRDRData.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/src/main/java/communications/encryption/KeyPairUtil.java
 /home/sanket/Documents/workspace/CommunicationsProtocol/target/generated-sources/protobuf/java/space/exploration/communications/protocol/service/DanRDRDataSeriesOuterClass.java

@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package space.exploration.communications.protocol.communication;
-
-message RoverPing {
-    int64 timeStamp = 1;
-    string msg = 2;
-}

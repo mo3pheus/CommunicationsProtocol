@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "WeatherData.proto";
-package space.exploration.communications.protocol.service;
-
-message SeasonalWeatherPayload {
-    repeated WeatherPayload weatherReports = 1;
-}
