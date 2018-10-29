@@ -9,20 +9,22 @@ public class KafkaConfig {
 
         String randomId = Long.toString(System.currentTimeMillis());
 
-        kafkaConfig.put("zookeeper.connect", "localhost:2181");
-        kafkaConfig.put("group.id", "space.exploration.mars.rover.curiosity." + randomId);
-        kafkaConfig.put("auto.offset.reset", "largest");
-
         if (entity.equals("Rover")) {
-            kafkaConfig.put("source.topic", "earth_to_curiosity_5");
-            kafkaConfig.put("destination.topic", "curiosity_to_earth_5");
+            kafkaConfig.put("zookeeper.connect", "anatares-mainframe:2181");
+            kafkaConfig.put("source.topic", "earth_to_curiosity_6");
+            kafkaConfig.put("destination.topic", "curiosity_to_earth_6");
+            kafkaConfig.put("metadata.broker.list", "antares-mainframe:9092");
+            kafkaConfig.put("bootstrap.servers", "antares-mainframe:9092");
         } else {
-            kafkaConfig.put("destination.topic", "earth_to_curiosity_5");
-            kafkaConfig.put("source.topic", "curiosity_to_earth_5");
+            kafkaConfig.put("zookeeper.connect", "zion-portable:2181");
+            kafkaConfig.put("destination.topic", "earth_to_curiosity_6");
+            kafkaConfig.put("source.topic", "curiosity_to_earth_6");
+            kafkaConfig.put("metadata.broker.list", "zion-portable:9092");
+            kafkaConfig.put("bootstrap.servers", "zion-portable:9092");
         }
 
-        kafkaConfig.put("metadata.broker.list", "localhost:9092");
-        kafkaConfig.put("bootstrap.servers", "localhost:9092");
+        kafkaConfig.put("group.id", "space.exploration.mars.rover.curiosity." + randomId);
+        kafkaConfig.put("auto.offset.reset", "largest");
         kafkaConfig.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         kafkaConfig.put("value.serializer", "org.apache.kafka.common.serialization.ByteArraySerializer");
 
