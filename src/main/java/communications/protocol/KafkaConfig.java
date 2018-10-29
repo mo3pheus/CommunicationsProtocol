@@ -10,13 +10,13 @@ public class KafkaConfig {
         String randomId = Long.toString(System.currentTimeMillis());
 
         if (entity.equals("Rover")) {
-            kafkaConfig.put("zookeeper.connect", "anatares-mainframe:2181");
+            kafkaConfig.put("zookeeper.connect", "zion-portable:2181");
             kafkaConfig.put("source.topic", "earth_to_curiosity_6");
             kafkaConfig.put("destination.topic", "curiosity_to_earth_6");
             kafkaConfig.put("metadata.broker.list", "antares-mainframe:9092");
             kafkaConfig.put("bootstrap.servers", "antares-mainframe:9092");
         } else {
-            kafkaConfig.put("zookeeper.connect", "zion-portable:2181");
+            kafkaConfig.put("zookeeper.connect", "antares-mainframe:2181");
             kafkaConfig.put("destination.topic", "earth_to_curiosity_6");
             kafkaConfig.put("source.topic", "curiosity_to_earth_6");
             kafkaConfig.put("metadata.broker.list", "zion-portable:9092");
