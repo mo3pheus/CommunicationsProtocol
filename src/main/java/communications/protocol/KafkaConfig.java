@@ -32,6 +32,33 @@ public class KafkaConfig {
         return kafkaConfig;
     }
 
+    public static final Properties getKafkaConfig(String entity, String zkServer) {
+        Properties kafkaConfig = new Properties();
+
+        String randomId = Long.toString(System.currentTimeMillis());
+
+        if (entity.equals("Rover")) {
+            kafkaConfig.put("zookeeper.connect", zkServer + ":2181");
+            kafkaConfig.put("source.topic", "earth_to_curiosity_6");
+            kafkaConfig.put("destination.topic", "curiosity_to_earth_6");
+            kafkaConfig.put("metadata.broker.list", zkServer + ":9092");
+            kafkaConfig.put("bootstrap.servers", zkServer + ":9092");
+        } else {
+            kafkaConfig.put("zookeeper.connect", zkServer + ":2181");
+            kafkaConfig.put("destination.topic", "earth_to_curiosity_6");
+            kafkaConfig.put("source.topic", "curiosity_to_earth_6");
+            kafkaConfig.put("metadata.broker.list", zkServer + ":9092");
+            kafkaConfig.put("bootstrap.servers", zkServer + ":9092");
+        }
+
+        kafkaConfig.put("group.id", "space.exploration.mars.rover.curiosity." + randomId);
+        kafkaConfig.put("auto.offset.reset", "largest");
+        kafkaConfig.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        kafkaConfig.put("value.serializer", "org.apache.kafka.common.serialization.ByteArraySerializer");
+
+        return kafkaConfig;
+    }
+
     public static final Properties getShipByConfig(String transmit) {
         Properties kafkaConfig = new Properties();
 
