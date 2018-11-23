@@ -5,4 +5,5 @@ package space.exploration.communications.protocol.service;
 message SampleAnalysisData {
     int32 sol = 1;
     bool getNearest = 2;
+    repeated bytes dataFiles = 3;
 }
