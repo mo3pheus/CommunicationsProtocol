@@ -11,8 +11,8 @@
     <properties>
         <junit.output.dir>output</junit.output.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.10</maven.compiler.source>
+        <maven.compiler.target>1.10</maven.compiler.target>
     </properties>
 
     <build>
@@ -61,7 +61,6 @@
                 <version>0.5.0</version>
                 <configuration>
                     <protocExecutable>/usr/local/bin/protoc</protocExecutable>
-                    <!-- <protocExecutable>/Users/sanketkorgaonkar/Documents/protoc-3/bin/protoc</protocExecutable> -->
                 </configuration>
                 <executions>
                     <execution>
@@ -72,11 +71,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20.1</version>
-            </plugin>
         </plugins>
     </build>
 
@@ -85,7 +79,7 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.4.0</version>
+            <version>3.6.1</version>
         </dependency>
         <dependency>
             <groupId>io.dropwizard.metrics</groupId>
@@ -111,14 +105,4 @@
             <version>1.2.17</version>
         </dependency>
     </dependencies>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.20.1</version>
-            </plugin>
-        </plugins>
-    </reporting>
 </project>
